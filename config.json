@@ -1,0 +1,61 @@
+{
+    "info": {
+        "titulo": "",
+        "descripcion": "",
+        "analytics": "",
+        "fbpixel": "",
+        "email-contacto": "",
+        "email-contacto-cc": "",
+        "email-contacto-bcc": "",
+        "copyright": "© [Y] All Rights Reserved.",
+        "url": "",
+        "logo": "images/logo.png"
+    },
+    "contactos" : {
+        "email" : "",
+        "telefonos" : {
+            "telefono1": "",
+            "telefono2": ""
+        },
+        "direccion": ""
+    },
+    "redes":{
+        "facebook": "",
+        "twitter": ""
+    },
+    "menu": {
+        "caracteristicas": {
+            "titulo": "",
+            "url": ""
+        },
+        "equipamiento": {
+            "titulo": "",
+            "url": ""
+        },
+        "contacto": {
+            "titulo": "",
+            "url": ""
+        }
+    },
+    "productos": {        
+        "producto1": {
+            "titulo": "",
+            "descripcion": "",
+            "modelo": "",
+            "flag": "",
+            "imagen": ""
+        },
+        "producto2": {
+            "titulo": "",
+            "descripcion": "",
+            "modelo": "",
+            "flag": "",
+            "imagen": ""
+        }
+    },
+    "configuracion": {
+        "gotop": 1,
+        "popup": 1,
+        "revolution": 0
+    }
+}
