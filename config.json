@@ -24,17 +24,17 @@
         "twitter": ""
     },
     "menu": {
-        "caracteristicas": {
-            "titulo": "",
-            "url": ""
+        "Nosotros": {
+            "url": "#nosotros"
         },
-        "equipamiento": {
-            "titulo": "",
-            "url": ""
+        "Productos": {
+            "url": "#productos"
         },
-        "contacto": {
-            "titulo": "",
-            "url": ""
+        "Servicios": {
+            "url": "#servicios"
+        },
+        "Contacto": {
+            "url": "#contacto"
         }
     },
     "productos": {        

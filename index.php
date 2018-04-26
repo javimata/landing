@@ -88,8 +88,25 @@ $config = json_decode($jsonStr);
 		<header id="header">
 
 		</header>
-		
-		<section id="main">
+
+
+		<section id="navigation">
+			<nav class="navbar navbar-expand-lg">
+				<a class="navbar-brand" href="#"><img src="<?php echo $config->info->logo; ?>" alt="<?php echo $config->info->titulo; ?>"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarMain">
+					<div class="navbar-nav">
+						<?php foreach($config->menu as $key => $menu): ?>
+						<a href="<?php echo $menu->url; ?>" class="nav-item nav-link"><?php echo $key; ?></a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</nav>
+		</section>
+
+		<section id="main" style="height: 2000px;">
 
 		</section>
 
