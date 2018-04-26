@@ -51,7 +51,7 @@ if ($a==1){
 	$mail->CharSet = 'UTF-8';
 
 
-	$mail->setFrom("noreply@cpm.coop", "Landing", 0);
+	$mail->setFrom("noreply@mail.com", "Landing", 0);
 	$mail->addReplyTo($email,$nombre);
 	$mail->addAddress($to, $nombre);
 
@@ -88,4 +88,4 @@ if ($a==1){
 	);
 
 //	header('Content-Type: application/json');
-	echo json_encode($resp);
+echo json_encode($resp);
