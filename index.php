@@ -85,6 +85,21 @@ $config = json_decode($jsonStr);
 	</head>
 	<body>
 
+		<header id="header">
+
+		</header>
+		
+		<section id="main">
+
+		</section>
+
+		<footer id="footer">
+
+		</footer>
+
+		<section id="copy">
+			
+		</section>
 
 
 		<?php if ( $config->configuracion->popup == 1 ): ?>

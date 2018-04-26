@@ -1,7 +1,7 @@
 {
     "info": {
-        "titulo": "",
-        "descripcion": "",
+        "titulo": "Landing demo",
+        "descripcion": "Landing demo developer by @Javi_Mata",
         "analytics": "",
         "fbpixel": "",
         "email-contacto": "",
@@ -9,7 +9,7 @@
         "email-contacto-bcc": "",
         "copyright": "© [Y] All Rights Reserved.",
         "url": "",
-        "logo": "images/logo.png"
+        "logo": "images/logo.jpg"
     },
     "contactos" : {
         "email" : "",
