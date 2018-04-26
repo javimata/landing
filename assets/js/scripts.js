@@ -11,14 +11,12 @@ $(document).ready(function(){
 	$('.link-phone').click(function(){
 
 		gtag('event', 'click', {'event_category': 'telefono','event_label': 'llamada'});
-		fbq('trackCustom', 'telefono', { action: 'llamada' });
 
 	});
 
 	$('.link-email').click(function(){
 
 		gtag('event', 'click', {'event_category': 'email','event_label': 'envio'});
-		fbq('trackCustom', 'email', { action: 'envio' });
 
 	});
 
@@ -36,16 +34,6 @@ $(document).ready(function(){
 			return false;
 		});
 	};
-
-	$('.box-producto-imagen').matchHeight({ byRow: false, property: 'height' });
-	$('.box-producto-info').matchHeight({ byRow: true, property: 'height' });
-	$('.box-nosotros').matchHeight({ byRow: false, property: 'min-height' });
-
-	$(window).resize(function(){
-		$('.box-producto-imagen').matchHeight({ byRow: false, property: 'height' });
-		$('.box-producto-info').matchHeight({ byRow: false, property: 'height' });
-		$('.box-nosotros').matchHeight({ byRow: true, property: 'min-height' });
-	});
 
 	// Select all links with hashes
 	$('a[href*="#"]')
@@ -87,12 +75,6 @@ $(document).ready(function(){
 	    }
 	});
 
-
-	$("#cotiza ").submit(function(e){
-		e.preventDefault();
-	});
-
-
 	$("#masinfo").submit(function(e){
 		e.preventDefault();
 		
@@ -102,8 +84,6 @@ $(document).ready(function(){
 		$(".caja_error").empty().removeClass("alert alert-info");
 
 		var fnombre 	= $form.find('input[name="nombre"]').val(),
-			fessocio   	= $form.find('select[name="essocio"]').val(),
-			fnosocio    = $form.find('input[name="nosocio"]').val(),
 			femail      = $form.find('input[name="email"]').val(),
 			ftelefono	= $form.find('input[name="telefono"]').val(),
 			fciudad     = $form.find('input[name="ciudad"]').val(),
@@ -145,8 +125,6 @@ $(document).ready(function(){
 
 			$.post( url, { 
 				nombre:fnombre,
-				essocio:fessocio,
-				nosocio:fnosocio,
 				email:femail,
 				telefono:ftelefono,
 				ciudad:fciudad,
@@ -155,11 +133,8 @@ $(document).ready(function(){
 				function( data ) {
 					if (parseInt(data.respuesta)==1){
 						$(".caja_error").empty().addClass("alert alert-info").append(data.texto_respuesta);
-						// alert(data.texto_respuesta);
 						$("#masinfo")[0].reset();
-						// ga('send', 'event', 'formulario', 'click', 'masinfo');
 						gtag('event', 'click', {'event_category': 'formulario','event_label': 'masinfo'});
-						fbq('track', 'CompleteRegistration');
 					}else{
 						alert(data.texto_respuesta);
 						$("#masinfo button.btn-primary").removeAttr("disabled");
