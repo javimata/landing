@@ -89,7 +89,6 @@ $config = json_decode($jsonStr);
 
 		</header>
 
-
 		<section id="navigation">
 			<nav class="navbar navbar-expand-lg">
 				<a class="navbar-brand" href="#"><img src="<?php echo $config->info->logo; ?>" alt="<?php echo $config->info->titulo; ?>"></a>
