@@ -5,7 +5,6 @@ $config = json_decode($jsonStr);
 	$strS = array('(',')',' ','-');
 	$strL = array('');
 
-	
 ?><!DOCTYPE html>
 <html lang="es">
 	<head>

@@ -4,5 +4,5 @@
         "compress": false,
         "sourceMap": false,
         "out": "../css/",
-    }
+    },
 }
