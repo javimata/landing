@@ -40,7 +40,7 @@ $config = json_decode($jsonStr);
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-		
+
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 		<link rel="stylesheet" href="assets/css/animate.css">
 		<link rel="stylesheet" href="assets/css/aos.css" />
@@ -61,7 +61,7 @@ $config = json_decode($jsonStr);
 		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 		document,'script','https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '<?php echo $config->info->fbpixel; ?>'); // Insert your pixel ID here.
+		fbq('init', '<?php echo $config->info->fbpixel; ?>');
 		fbq('track', 'PageView');
 		</script>
 		<noscript><img height="1" width="1" alt="facebook pixel" style="display:none"
