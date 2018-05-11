@@ -30,15 +30,17 @@ $config = json_decode($jsonStr);
 		<!-- GOOGLE FONT -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
-
 		<?php if ( $config->configuracion->revolution == 1 ): ?>
+		<!-- Add Revolution Slider -->
 	    <link href="uniterevolution/assets/rs-plugin/css/settings.css" rel="stylesheet" type="text/css" />
 	    <link href="uniterevolution/assets/rs-plugin/css/dynamic-captions.css" rel="stylesheet" type="text/css" />
-	    <link href="uniterevolution/assets/rs-plugin/css/static-captions.css" rel="stylesheet" type="text/css" />
+		<link href="uniterevolution/assets/rs-plugin/css/static-captions.css" rel="stylesheet" type="text/css" />
+		<!-- End Revolution Slider -->
 		<?php endif; ?>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 		<link rel="stylesheet" href="assets/css/animate.css">
 		<link rel="stylesheet" href="assets/css/aos.css" />
@@ -130,6 +132,7 @@ $config = json_decode($jsonStr);
 
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 		<!-- Bootstrap JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
