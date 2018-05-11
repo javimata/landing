@@ -72,7 +72,7 @@ $config = json_decode($jsonStr);
 
 		<?php if ( $config->info->analytics != "" ): ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-285512-20"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $config->info->analytics; ?>"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
