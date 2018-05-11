@@ -1,10 +1,9 @@
-<?php 
+<?php
 $jsonStr = file_get_contents("config.json");
 $config = json_decode($jsonStr);
 
-	$strS = array('(',')',' ','-');
-	$strL = array('');
-
+$strS = array('(',')',' ','-');
+$strL = array('');
 ?><!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -21,7 +20,7 @@ $config = json_decode($jsonStr);
 		<meta property="og:url" content="<?php echo $config->info->url; ?>"/>
 		<meta property="og:site_name" content="<?php echo $config->info->titulo; ?>"/>
 		<meta property="og:description" content="<?php echo $config->info->descripcion; ?>"/>
-		<meta property="og:image" content="<?php echo $config->info->url; ?><?php echo $config->info->logo ?>"/>		
+		<meta property="og:image" content="<?php echo $config->info->url; ?><?php echo $config->info->logo ?>"/>
 
 		<!-- FAVICONS -->
 		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
@@ -115,7 +114,7 @@ $config = json_decode($jsonStr);
 		</footer>
 
 		<section id="copy">
-			
+
 		</section>
 
 		<?php if ( $config->configuracion->popup == 1 ): ?>
@@ -144,7 +143,7 @@ $config = json_decode($jsonStr);
 		<?php if ( $config->configuracion->revolution == 1 ): ?>
         <script type="text/javascript" src="assets/js/revolution.init.js"></script>
 	    <script src="uniterevolution/assets/rs-plugin/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
-	    <script src="uniterevolution/assets/rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>			
+	    <script src="uniterevolution/assets/rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
 		<?php endif ?>
 
 
