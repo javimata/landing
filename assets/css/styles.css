@@ -126,57 +126,55 @@ section#copy {
   font-size: 12px;
   color: #fff;
 }
-.popup-main .modal-dialog {
-  max-width: 680px;
+/*
+.popup-main {
+	.modal-dialog {
+		max-width: 680px;
+		.modal-content {
+			border-radius: 1.5rem;
+			.modal-header {
+				border-bottom: 0;
+				position: relative;
+				padding-bottom: 0;
+				.logo-popup {
+					text-align: center;
+					width: 100%;
+					img {
+						display: inline-block;
+					}
+				}
+				button.close {
+					position: absolute;
+				}
+			}
+			.modal-body {
+				max-width: 600px;
+				margin: 0 auto -80px;
+				padding-top: 0; 
+				.popup-title {
+					margin: 1rem auto;
+					text-align: center;
+					h1 {
+					    font-size: 35px;
+					    font-weight: 600;
+					    text-transform: uppercase;
+					}
+					.subtext {
+						font-size: 20px;
+					}
+				}
+			}
+		}		
+	}
+	@media ( max-width: 767px ) {
+		.modal-dialog .modal-content .modal-body .popup-title h1 { font-size: 25px; margin-bottom: .5rem; }
+	}
+	@media ( max-width: 576px ) {
+		.modal-dialog .modal-content .modal-body .popup-title h1 { font-size: 22px; margin-bottom: .5rem; }
+	}
+
 }
-.popup-main .modal-dialog .modal-content {
-  border-radius: 1.5rem;
-  border-bottom: 80px solid #000;
-}
-.popup-main .modal-dialog .modal-content .modal-header {
-  border-bottom: 0;
-  position: relative;
-  padding-bottom: 0;
-}
-.popup-main .modal-dialog .modal-content .modal-header .logo-popup {
-  text-align: center;
-  width: 100%;
-}
-.popup-main .modal-dialog .modal-content .modal-header .logo-popup img {
-  display: inline-block;
-}
-.popup-main .modal-dialog .modal-content .modal-header button.close {
-  position: absolute;
-}
-.popup-main .modal-dialog .modal-content .modal-body {
-  max-width: 600px;
-  margin: 0 auto -80px;
-  padding-top: 0;
-}
-.popup-main .modal-dialog .modal-content .modal-body .popup-title {
-  margin: 1rem auto;
-  text-align: center;
-}
-.popup-main .modal-dialog .modal-content .modal-body .popup-title h1 {
-  font-size: 35px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.popup-main .modal-dialog .modal-content .modal-body .popup-title .subtext {
-  font-size: 20px;
-}
-@media (max-width: 767px) {
-  .popup-main .modal-dialog .modal-content .modal-body .popup-title h1 {
-    font-size: 25px;
-    margin-bottom: .5rem;
-  }
-}
-@media (max-width: 576px) {
-  .popup-main .modal-dialog .modal-content .modal-body .popup-title h1 {
-    font-size: 22px;
-    margin-bottom: .5rem;
-  }
-}
+*/
 .bg-gray {
   background: #f3f2f2;
 }

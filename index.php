@@ -118,16 +118,17 @@ $config = json_decode($jsonStr);
 			
 		</section>
 
-
 		<?php if ( $config->configuracion->popup == 1 ): ?>
 			<?php include_once "popup.php"; ?>
 		<?php endif ?>
 
+		<script type="text/javascript">
+			var jam_gotop = '<?php echo $config->configuracion->gotop; ?>';
+			var jam_popup = '<?php echo $config->configuracion->popup; ?>';
+		</script>
+
 		<?php if ( $config->configuracion->gotop == 1 ): ?>
-			<script type="text/javascript">
-				var sp_gotop = '1';
-			</script>
-			<a href="javascript:void(0)" class="scrollup" aria-label="">&nbsp;</a>
+		<a href="javascript:void(0)" class="scrollup" aria-label="">&nbsp;</a>
 		<?php endif ?>
 
 		<!-- jQuery -->
