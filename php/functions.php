@@ -1,4 +1,7 @@
 <?php
+/*
+ *
+*/
 function RandomString($length=10,$uc=TRUE,$n=FALSE,$sc=FALSE)
 {
     $source = 'abcdefghijklmnopqrstuvwxyz';
