@@ -1,9 +1,8 @@
 <?php
+require_once "php/functions.php";
+
 $jsonStr = file_get_contents("config.json");
 $config = json_decode($jsonStr);
-
-$strS = array('(',')',' ','-');
-$strL = array('');
 ?><!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -85,6 +84,28 @@ $strL = array('');
 	</head>
 	<body>
 
+		<section id="section-top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<?php if ( $config->contactos->telefono ): ?>
+						<i class="fas fa-phone"></i> <a href="tel:<?php echo cleanString($config->contactos->telefono); ?>" class="link-phone"><?php echo $config->contactos->telefono; ?></a>
+						<?php endif; ?>
+						<?php if ( $config->contactos->email ): ?>
+						<i class="fas fa-envelope"></i> <a href="mailto:<?php echo cleanString($config->contactos->email); ?>" class="link-email" target="_blank"><?php echo $config->contactos->email; ?></a>
+						<?php endif; ?>
+					</div>
+					<div class="col-6">
+						<?php foreach ($config->redes as $red): ?>
+							<?php if ( $red->icon ):?>
+							<a href="<?php echo $red->url; ?>"><i class="fab fa-<?php echo $red->icon; ?>"></i></a>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<header id="header">
 
 		</header>
@@ -114,7 +135,13 @@ $strL = array('');
 		</footer>
 
 		<section id="copy">
-
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<?php echo replaceString($config->info->copyright); ?> 
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<?php if ( $config->configuracion->popup == 1 ): ?>

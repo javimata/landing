@@ -8,8 +8,8 @@
  * @param boolean $sc     - add special characters
  * @return void
  */
-function RandomString($length=10,$uc=TRUE,$n=FALSE,$sc=FALSE)
-{
+function RandomString($length=10,$uc=TRUE,$n=FALSE,$sc=FALSE) {
+
     $source = 'abcdefghijklmnopqrstuvwxyz';
     if($uc==1) $source .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     if($n==1) $source .= '1234567890';
@@ -25,4 +25,38 @@ function RandomString($length=10,$uc=TRUE,$n=FALSE,$sc=FALSE)
  
     }
     return $rstr;
+
+}
+/**
+ * cleanString function that clean a string
+ *
+ * @param string  $text - Text to clear
+ * @return void
+ */
+function cleanString( $text="" ) {
+
+    $strS = array('(',')',' ','-');
+    $strL = array('');
+
+    $text = str_replace($strS,$strL,$text);
+
+    return $text;
+
+}
+
+/**
+ * replaceString Replace a character in a string
+ *
+ * @param string $text Text to apply the replace rules
+ * @return void
+ */
+function replaceString( $text = "" ) {
+
+    $strS = array('[Y]');
+    $strL = array(date('Y'));
+
+    $text = str_replace($strS,$strL,$text);
+
+    return $text;
+
 }

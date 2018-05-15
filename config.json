@@ -12,16 +12,19 @@
         "logo": "images/logo.jpg"
     },
     "contactos" : {
-        "email" : "",
-        "telefonos" : {
-            "telefono1": "",
-            "telefono2": ""
-        },
+        "email" : "johndoe@email.com",
+        "telefono": "(XX) XXX XXXXX",
         "direccion": ""
     },
     "redes":{
-        "facebook": "",
-        "twitter": ""
+        "facebook": {
+            "url": "#",
+            "icon": "facebook"
+        },
+        "twitter": {
+            "url": "#",
+            "icon": "twitter"
+        }
     },
     "menu": {
         "Nosotros": {
