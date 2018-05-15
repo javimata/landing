@@ -1,7 +1,13 @@
 <?php
-/*
+/**
+ * RandomString function generate a random string
  *
-*/
+ * @param integer $length - is the long of the string
+ * @param boolean $uc     - add a case range letters
+ * @param boolean $n      - add numbers
+ * @param boolean $sc     - add special characters
+ * @return void
+ */
 function RandomString($length=10,$uc=TRUE,$n=FALSE,$sc=FALSE)
 {
     $source = 'abcdefghijklmnopqrstuvwxyz';
