@@ -60,3 +60,19 @@ function replaceString( $text = "" ) {
     return $text;
 
 }
+
+/**
+ * get Configuration json
+ *
+ * @return void
+ */
+function getConfig() {
+
+    $jsonStr = file_get_contents("config.json");
+    $config  = json_decode($jsonStr);
+
+    return $config;
+
+}
+
+

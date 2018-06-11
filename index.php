@@ -1,8 +1,6 @@
 <?php
 require_once "php/functions.php";
-
-$jsonStr = file_get_contents("config.json");
-$config = json_decode($jsonStr);
+$config = getConfig();
 ?><!DOCTYPE html>
 <html lang="es">
 	<head>
