@@ -1,0 +1,67 @@
+{
+    "info": {
+        "titulo": "Landing demo",
+        "descripcion": "Landing demo developer by @Javi_Mata",
+        "analytics": "",
+        "fbpixel": "",
+        "email-contacto": "",
+        "email-contacto-cc": "",
+        "email-contacto-bcc": "",
+        "copyright": "© [Y] All Rights Reserved.",
+        "url": "",
+        "logo": "images/logo.jpg"
+    },
+    "contactos" : {
+        "email" : "johndoe@email.com",
+        "telefono": "(XX) XXX XXXXX",
+        "direccion": ""
+    },
+    "redes":{
+        "facebook": {
+            "url": "#",
+            "icon": "facebook"
+        },
+        "twitter": {
+            "url": "#",
+            "icon": "twitter"
+        }
+    },
+    "menu": {
+        "Nosotros": {
+            "url": "#nosotros"
+        },
+        "Productos": {
+            "url": "#productos"
+        },
+        "Servicios": {
+            "url": "#servicios"
+        },
+        "Contacto": {
+            "url": "#contacto"
+        },
+        "Footer": {
+            "url": "#footer"
+        }
+    },
+    "productos": {        
+        "producto1": {
+            "titulo": "",
+            "descripcion": "",
+            "modelo": "",
+            "flag": "",
+            "imagen": ""
+        },
+        "producto2": {
+            "titulo": "",
+            "descripcion": "",
+            "modelo": "",
+            "flag": "",
+            "imagen": ""
+        }
+    },
+    "configuracion": {
+        "gotop": 1,
+        "popup": 0,
+        "revolution": 1
+    }
+}
