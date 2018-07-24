@@ -12,6 +12,7 @@ $config = getConfig();
 		<?php endif ?>
 		<title><?php echo $config->info->titulo ?></title>
 
+		<!-- Metas OG - Open Graph para contenido compartido en Facebook -->
 		<meta property="og:title" content="<?php echo $config->info->titulo ?>"/>
 		<meta property="og:type" content="article"/>
 		<meta property="og:url" content="<?php echo $config->info->url; ?>"/>
