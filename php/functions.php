@@ -35,11 +35,7 @@ function RandomString($length=10,$uc=TRUE,$n=FALSE,$sc=FALSE) {
  */
 function cleanString( $text="" ) {
 
-<<<<<<< HEAD
     $strS = array('(',')',' ','-','•');
-=======
-    $strS = array('(',')',' ','-');
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
     $strL = array('');
 
     $text = str_replace($strS,$strL,$text);
@@ -56,13 +52,8 @@ function cleanString( $text="" ) {
  */
 function replaceString( $text = "" ) {
 
-<<<<<<< HEAD
     $strS = array('[Y]','[adview]');
     $strL = array(date('Y'),'<a href="http://www.adview.mx" target="_blank"><img src="images/logo-adview.png" class="img-fluid" /></a>');
-=======
-    $strS = array('[Y]');
-    $strL = array(date('Y'));
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 
     $text = str_replace($strS,$strL,$text);
 
@@ -82,10 +73,4 @@ function getConfig() {
 
     return $config;
 
-<<<<<<< HEAD
 }
-=======
-}
-
-
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
