@@ -1,4 +1,5 @@
 /*---------- PRESETS ----------*/
+<<<<<<< HEAD
 @primary:     #04cf85;
 @secondary:   #191919;
 @black:       #000;
@@ -8,6 +9,17 @@
 @orange:      #df9f15;
 
 @font1:       'Lato', sans-serif;
+=======
+@primary:     #fb0d1c;
+@secondary:   #6a86a4;
+@black:       #000;
+@white:       #fff;
+@gray:        #f3f2f2;
+@dark:		  #363839;    
+@orange:      #df9f15;
+
+@font1:       'Open Sans', sans-serif;
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 
 body {
 	background: @white;
@@ -16,6 +28,7 @@ body {
 	color: @black;
 	position: relative;
 	font-weight: 300;
+<<<<<<< HEAD
 	overflow-x: hidden;
 }
 
@@ -76,12 +89,69 @@ body {
 				li {
 					a {
 						font-size: 14px !important;
+=======
+}
+
+header#header {
+	padding: 10px 0;
+	.contact-info-top {
+		max-width: 500px;
+		float: right;
+		text-align: right;
+		font-size: 20px;
+		.contact-info-top-title {
+			font-size: 20px;
+		}
+		.contact-info-top-tel {
+			font-weight: 600;
+			color: @primary;
+			a {
+				font-weight: 600;
+				color: @primary;
+			}
+		}
+	}
+	@media ( min-width: 768px ) and ( max-width: 991px ) {
+		.contact-info-top {
+			font-size: 16px;
+		}
+	}
+	@media ( max-width: 767px ) {
+		padding: 0;
+		.col-info {
+			padding: 5px 0;
+			background: @primary;
+			.contact-info-top {
+				float: none;
+				font-size: 16px;
+				text-align: center;
+				max-width: 100%;
+				.contact-info-top-tel {
+					color: @white;
+					font-weight: 400;
+					a {
+						font-size: 16px;
+						font-weight: 300;
+						color: @white;
+						display: inline-block;
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 					}
 				}
 			}
 		}
+<<<<<<< HEAD
 	}
 }
+=======
+		.col-logo {
+			.logo {
+				padding: 1rem 0;
+			}
+		}
+	}
+}
+
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 section#menu {
 	background: @black;
 	ul.nav.menu {
@@ -121,6 +191,7 @@ section#menu {
 	}
 }
 
+<<<<<<< HEAD
 
 section#slider {
 	position: relative;
@@ -421,11 +492,41 @@ footer#footer {
 				}
 			}
 		}
+=======
+footer#footer {
+	padding: 40px 0;
+	background-color: @dark;
+	color: @white;
+	font-size: 13px;
+	color: #8c8989;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li {
+			a {
+				display: block;
+			}
+		}
+	}
+	a {
+		color: @white;
+		&:hover {
+			color: #8c8989;
+		}
+	}
+	h4 {
+		color: @white;
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 	}
 }
 
 section#copy {
+<<<<<<< HEAD
 	background: @primary;
+=======
+	background: @dark;
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 	padding: 15px 0;
 	font-size: 12px;
 	color: @white;
@@ -481,6 +582,7 @@ section#copy {
 }
 */
 
+<<<<<<< HEAD
 
 
 
@@ -513,6 +615,8 @@ section#copy {
 }
 
 
+=======
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 .bg-gray {
 	background: @gray;
 }
@@ -563,11 +667,17 @@ h1,h2,h3,h4,h5,h6 {
 	color: @white;
 	border: 0;
 	padding: 12px 30px;
+<<<<<<< HEAD
 	border-radius: 5px;
 	transition: all 300ms;
 	&:hover {
 		background: @white;
 		color: @black;
+=======
+	border-radius: 0;
+	&:hover {
+		background: @black;
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 	}
 	&.btn-popup {
 		&:hover {
@@ -587,6 +697,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .form-control {
+<<<<<<< HEAD
 	background: @dark;
 	color: @white;
 	border: 0;
@@ -599,6 +710,11 @@ h1,h2,h3,h4,h5,h6 {
 ::placeholder {
   color: @white !important;
 }
+=======
+	border-radius: 0;
+}
+
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 
 button.close {
 	position: relative;

@@ -25,7 +25,11 @@ $config = getConfig();
 		<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 		<!-- GOOGLE FONT -->
+<<<<<<< HEAD
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+=======
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 
 		<?php if ( $config->configuracion->revolution == 1 ): ?>
 		<!-- Add Revolution Slider -->
@@ -38,9 +42,12 @@ $config = getConfig();
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
+<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
+=======
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 		<link rel="stylesheet" href="assets/css/animate.css">
 		<link rel="stylesheet" href="assets/css/aos.css" />
@@ -86,6 +93,7 @@ $config = getConfig();
 	</head>
 	<body>
 
+<<<<<<< HEAD
 		<?php if ( $config->configuracion->loading == 1 ): ?>
 		<div class="loading"><img src="images/logo.png" alt="Loading" /><br /><p>Cargando...</p></div>
 		<?php endif; ?>
@@ -105,6 +113,23 @@ $config = getConfig();
 						<?php foreach ($config->redes as $red): ?>
 							<?php if ( $red->icon ):?>
 							<a href="<?php echo $red->url; ?>" class=" ml-2"><i class="fab fa-<?php echo $red->icon; ?>"></i></a>
+=======
+		<section id="section-top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<?php if ( $config->contactos->telefono ): ?>
+						<i class="fas fa-phone"></i> <a href="tel:<?php echo cleanString($config->contactos->telefono); ?>" class="link-phone"><?php echo $config->contactos->telefono; ?></a>
+						<?php endif; ?>
+						<?php if ( $config->contactos->email ): ?>
+						<i class="fas fa-envelope"></i> <a href="mailto:<?php echo cleanString($config->contactos->email); ?>" class="link-email" target="_blank"><?php echo $config->contactos->email; ?></a>
+						<?php endif; ?>
+					</div>
+					<div class="col-6">
+						<?php foreach ($config->redes as $red): ?>
+							<?php if ( $red->icon ):?>
+							<a href="<?php echo $red->url; ?>"><i class="fab fa-<?php echo $red->icon; ?>"></i></a>
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 							<?php endif; ?>
 						<?php endforeach; ?>
 					</div>
@@ -112,6 +137,7 @@ $config = getConfig();
 			</div>
 		</section>
 
+<<<<<<< HEAD
 		<section id="header">
 			
 			<div class="container-fluid">
@@ -410,12 +436,44 @@ $config = getConfig();
 				</div>
 			</div>
 
+=======
+		<header id="header">
+
+		</header>
+
+		<section id="navigation">
+			<nav class="navbar navbar-expand-lg">
+				<a class="navbar-brand" href="#"><img src="<?php echo $config->info->logo; ?>" alt="<?php echo $config->info->titulo; ?>"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarMain">
+					<div class="navbar-nav">
+						<?php foreach($config->menu as $key => $menu): ?>
+						<a href="<?php echo $menu->url; ?>" class="nav-item nav-link"><?php echo $key; ?></a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</nav>
+		</section>
+
+		<section id="main" style="height: 2000px;">
+
+		</section>
+
+		<footer id="footer">
+
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 		</footer>
 
 		<section id="copy">
 			<div class="container">
 				<div class="row">
+<<<<<<< HEAD
 					<div class="col">
+=======
+					<div class="col text-center">
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 						<?php echo replaceString($config->info->copyright); ?> 
 					</div>
 				</div>
@@ -443,9 +501,12 @@ $config = getConfig();
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 		<script src="https://cdn.javimata.com/assets/js/jquery.matchHeight-min.js"></script>
+<<<<<<< HEAD
 
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+=======
+>>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 		<script src="assets/js/aos.js"></script>
 
 		<?php if ( $config->configuracion->revolution == 1 ): ?>
