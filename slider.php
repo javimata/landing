@@ -3,8 +3,8 @@ $promocion = array(
     'titulo' => 'PROMOCIÓN SEPTIEMBRE',
     'subtitulo' => 'Haz tu reservación hoy y obten 30% de descuento',
     'descripcion' => 'Aplica reservando desde nuestro formulario',
-    'txt_btn' => 'COTIZA',
-    'link_btn' => '#',
+    'txt_btn' => 'RESERVA AHORA',
+    'link_btn' => '#masinformacion',
     'class_btn' => 'btn btn-primary',
     'attr_btn' => 'data-toggle="modal" data-target="#popup_cotiza"'
 );

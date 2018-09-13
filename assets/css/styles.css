@@ -333,6 +333,7 @@ footer#footer {
   background: url('../../images/fondo-03.jpg') no-repeat;
   background-position: center right;
   background-size: cover;
+  background-attachment: fixed;
   color: #fff;
   font-size: 13px;
 }
