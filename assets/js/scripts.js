@@ -2,29 +2,43 @@
 	
 	$(document).ready(function(){
 
-		$('#popup_cotiza').on('show.bs.modal', function (event) {
-		var button = $(event.relatedTarget) // Button that triggered the modal
-		var producto = button.data('producto') // Extract info from data-* attributes
-		var modal = $(this)
-		modal.find('span.nombre-producto').empty().text(producto)
-		modal.find('input[name="producto"]').val(producto)
+		/*
+		$('.slide-logos').slick({
+			autoplay: true,
+			slidesToShow: 6,
+			infinite: true,
+			adaptiveHeight: true,
+			centerMode: false,
+			variableWidth: true
+		});
+		*/
+
+
+
+		$('a[href^=tel]').addClass("link-phone");
+		$('a[href^=mailto]').addClass("link-email").attr("target", "_blank");
+
+		// Manejo de Eventos
+		$('.link-phone').click(function () {
+			if (typeof gtag == 'function') {
+				gtag('event', 'click', { 'event_category': 'telefono', 'event_label': 'llamada' });
+			};
+			if (typeof ga == 'function') {
+				ga('send', 'event', 'telefono', 'click', 'llamada');
+			};
+			if (typeof fbq == 'function') {
+			}
 		});
 
-		$('.link-phone').click(function(){
-
-			gtag('event', 'click', {'event_category': 'telefono','event_label': 'llamada'});
-
+		$('.link-email').click(function () {
+			if (typeof gtag == 'function') {
+				gtag('event', 'click', { 'event_category': 'email', 'event_label': 'envio' });
+			}
+			if (typeof ga == 'function') {
+				ga('send', 'event', 'email', 'click', 'envio');
+			};
 		});
 
-		$('.link-email').click(function(){
-
-			gtag('event', 'click', {'event_category': 'email','event_label': 'envio'});
-
-		});
-
-		if( jam_popup == 1 ) {
-			$('#popup_home').modal('show');
-		}
 
 		if( jam_gotop == 1 ){
 			$(window).scroll(function(){
@@ -188,6 +202,8 @@
 				}
 			}
 		}
+
+		$('.loading').delay(2400).slideUp(600);
 
 	});
 
