@@ -1,20 +1,19 @@
 {
     "info": {
-        "titulo": "Grupo Verden - Ecología aplicada",
-        "descripcion": "Servicios integrales de ecología para contribuir al cuidado del medio ambiente a través de acciones efectivas.",
+        "titulo": "Hotel del Rey - La mejor ubicación",
+        "descripcion": "La mejor ubicación con el mejor servicio a tu disposición, resaltando la calidad y el buen gusto que su familia merece",
         "analytics": "",
         "fbpixel": "",
         "email-contacto": "",
         "email-contacto-cc": "",
         "email-contacto-bcc": "",
-        "copyright": "© [Y]. Todos los Derechos Reservados Aviso de Privacidad. Hecho por [adview]",
+        "copyright": "© [Y]. Todos los Derechos Reservados Aviso de Privacidad.",
         "url": "",
         "logo": "images/logo.png"
     },
     "contactos" : {
-        "email" : "atencion.clientes@grupoverden.com",
-        "telefono": "(444) 45 65 531",
-        "telefono2": "(444) 45 65 532",
+        "email" : "atencion.clientes@eldominio.com",
+        "telefono": "(123) 45 65 531",
         "direccion": ""
     },
     "redes":{
@@ -28,17 +27,17 @@
         }
     },
     "menu": {
-        "Autorizaciones": {
-            "url": "#autorizaciones"
+        "Nosotros": {
+            "url": "#nosotros"
         },
         "Servicios": {
             "url": "#servicios"
         },
-        "Nosotros": {
-            "url": "#nosotros"
+        "Ubicación": {
+            "url": "#ubicacion"
         },
-        "Pide más información": {
-            "url": "#masinformacion"
+        "Amenidades": {
+            "url": "#unidades"
         },
         "Contacto": {
             "url": "#contacto"
@@ -63,7 +62,7 @@
     "configuracion": {
         "gotop": 1,
         "popup": 0,
-        "revolution": 0,
-        "loading": 1
+        "revolution": 1,
+        "loading": 0
     }
 }

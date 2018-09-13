@@ -117,7 +117,7 @@ $config = getConfig();
 			<div class="container-fluid">
 				<div class="row align-items-center">
 					<div class="col-9 col-md-4 col-xl-3">
-						<a class="navbar-brand p-1" href="#" data-aos="fade-down" data-aos-delay="3000">
+						<a class="navbar-brand p-1" href="#" data-aos="fade-down" data-aos-delay="0">
 							<img src="<?php echo $config->info->logo; ?>" alt="<?php echo $config->info->titulo; ?>" class="img-fluid"/>
 						</a>
 					</div>
@@ -139,7 +139,7 @@ $config = getConfig();
 					</div>
 					<div class="d-none d-xl-block col-xl-3 text-right">
 						<div class="box-tel-top">
-							Pide más información o Cotiza:<br />
+							Haz tu reservación ahora:<br />
 							<a href="tel:<?php echo cleanString($config->contactos->telefono); ?>"><i class="fas fa-mobile-alt"></i> <?php echo $config->contactos->telefono; ?></a>
 						</div>
 					</div>
@@ -158,66 +158,68 @@ $config = getConfig();
 		</section>
 
 		<section id="slider">
+
+			<?php include_once ('slider.php'); ?>
 			
-			<div class="slider-main">
-				<img src="images/sliders/slider-01-movil.jpg" alt="" class="img-fluid d-block d-md-none" />
-				<img src="images/sliders/slider-01.jpg" alt="" class="img-fluid d-none d-md-block" />
-			</div>
-	
 			<div id="masinformacion" class="box-form" data-aos="fade-up" data-aos-delay="600">
 				<header id="header-form">
-					<h3>SOLICITA MÁS INFORMACIÓN ó</h3>
-					<h2>Obtén tu <br class="d-none d-xl-block"/>Asesoría <strong>Gratuita</strong></h2>
+					<h3>¡OBTÉN EL MEJOR PRECIO SOLO HOY!</h3>
+					<h2>Reserva ahora <br class="d-none d-xl-block"/>al mejor <strong>Precio</strong></h2>
 					<p class="text-form">Deja tus datos y nuestros asesores te contactarán a la brevedad con la información para tus necesidades</p>
 				</header>
 				<div class="box-campos">
 					<form action="php/process.php" id="masinfo">
-						<div class="form-group">
+					<div class="row">
+						<div class="form-group col-12">
 							<input type="text" name="nombre" placeholder="Nombre Completo *" class="form-control" />
 						</div>
-						<div class="form-group">
+						<div class="form-group col-12">
 							<input type="email" name="email" placeholder="Email *" class="form-control" />
 						</div>
-						<div class="form-group">
+						<div class="form-group col-12">
 							<input type="text" name="telefono" placeholder="Teléfono" class="form-control" />
 						</div>
-						<div class="form-group">
-							<input type="text" name="empresa" placeholder="Empresa *" class="form-control" />
+						<div class="form-group col-md-6">
+							<label>Entrada</label>
+							<input type="date" name="entrada" class="form-control" />
 						</div>
-						<div class="form-group">
+						<div class="form-group col-md-6">
+							<label>Salida</label>
+							<input type="date" name="salida" class="form-control" />
+						</div>
+						<div class="form-group col-md-6">
 							<select name="servicio" id="tipo_servicio" class="form-control">
-								<option value="">Tipo de Servicio</option>
-								<option value="Disposición de aguas industriales">Disposición de aguas industriales</option>
-								<option value="Acopio temporal">Acopio temporal</option>
-								<option value="Asesoría legal ambiental">Asesoría legal ambiental</option>
-								<option value="Trámites y gestiones ambientales">Trámites y gestiones ambientales</option>
-								<option value="Combustibles alternos ecológicos">Combustibles alternos ecológicos</option>
-								<option value="Recolección y transporte">Recolección y transporte</option>
-								<option value="Manejo de residuos industriales">Manejo de residuos industriales</option>
-								<option value="Tratamiento de aguas contaminadas">Tratamiento de aguas contaminadas</option>
-								<option value="Otro servicio">Otro servicio</option>
+								<option value="">Adultos</option>
 							</select>
 						</div>
-						<div class="form-group">
+						<div class="form-group col-md-6">
+							<select name="servicio" id="tipo_servicio" class="form-control">
+								<option value="">Menores</option>
+							</select>
+						</div>						
+						<div class="form-group col-12">
 							<button class="btn btn-primary btn-full">QUIERO MÁS INFORMACIÓN</button>
 						</div>
+					</div>
 					</form>
 				</div>
 			</div>
 
 		</section>
 
-		<section id="autorizaciones">
+		<section id="nosotros">
 			
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="box-autorizaciones">
-							<h4 class="subtitle">SEGURIDAD GARANTIZADA</h4>
-							<h2>Autorizaciones</h2>
-							<p>Grupo Verden cuenta con las autorizaciones necesarias para gestionar Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-							<p>Más de 15 años de experiencia enean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-							<img src="images/autorizaciones.png" alt="Autorizaciones" class="img-fluid my-4" data-aos="fade-down" data-aos-delay="600" />
+							<h4 class="subtitle">NOSOTROS</h4>
+							<h2>HOTEL DEL REY</h2>
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, adipisci nemo. Magnam possimus blanditiis provident, repellat eos nobis, adipisci rem vero facilis at non odit eaque ducimus vel veritatis sapiente.</p>
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, adipisci nemo. Magnam possimus blanditiis provident</p>
+							<img src="images/logo-certificado.jpg" alt="Certificado" class="img-fluid my-4 mr-3 rounded-circle" data-aos="fade-down" data-aos-delay="300" />
+							<img src="images/logo-certificado.jpg" alt="Certificado" class="img-fluid my-4 mr-3 rounded-circle" data-aos="fade-down" data-aos-delay="600" />
+							<img src="images/logo-certificado.jpg" alt="Certificado" class="img-fluid my-4 mr-3 rounded-circle" data-aos="fade-down" data-aos-delay="900" />
 						</div>
 					</div>
 				</div>
@@ -232,7 +234,7 @@ $config = getConfig();
 				<div class="row">
 				
 					<header id="header-section" class="text-center mb-5">
-						<h4>SOLUCIONES ESPECIALIZADAS PARA CADA NECESIDAD</h4>
+						<h4>SIEMPRE BUSCAMOS LA EXCELENCIA</h4>
 						<h2>Servicios</h2>
 					</header>
 				
@@ -241,44 +243,44 @@ $config = getConfig();
 				<div class="row">
 					<div class="col-md-6 col-lg-5" data-aos="fade-left" data-aos-delay="300">
 						<div class="box-servicio">
-							<h3>Disposición de aguas Industriales</h3>
-							<p>Contamos con equipamiento de última generación en instalaciones propias, transformamos un residuo peligroso, como son las aguas contaminadas, en agua que se puede reutilizar para riego en zonas áridas.</p>
+							<h3>Servicio importante</h3>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis quasi magni nesciunt dolore repellat. Hic, perspiciatis error! Accusantium laborum praesentium voluptate magni harum fugiat?</p>
 						</div>
 						<div class="box-servicio">
-							<h3>Acopio temporal</h3>
-							<p>Disponemos centros de acopio en el estado de San Luis Potosí,  lo que nos permite tener más cobertura en nuestros servicios</p>
+							<h3>Otro servicio</h3>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis</p>
 						</div>
 						<div class="box-servicio">
-							<h3>Asesoría legal ambiental</h3>
-							<p>Nuestro equipo de expertos lo asesorará con gusto en el tema, permiso, trámite o proyecto ambiental que necesite.</p>
+							<h3>Más servicios</h3>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis</p>
 						</div>
 						<div class="box-servicio">
-							<h3>Trámites y gestiones ambientales</h3>
-							<p>Gestionamos por usted procesos y trámites ante autoridades ambientales, tal como el COA (cédula de operación anual).</p>
+							<h3>Somos los mejores</h3>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis</p>
 						</div>
 						<div class="box-servicio">
-							<h3>Combustibles alternos ecológicos</h3>
-							<p>Generamos combustibles alternos ecológicos a la medida, formulados según el equipo y especificaciones de combustión</p>
+							<h3>Y si ponemos otro servicio</h3>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis</p>
 						</div>
 
 					</div>
-					<div class="d-none d-lg-block col-lg-2 text-center" data-aos="fade-down" data-aos-delay="600">
-						<img src="images/linea-servicios.png" alt="Servicios" class="img-fluid"/>
+					<div class="d-none d-lg-block col-lg-2 text-center align-item-center" data-aos="fade-down" data-aos-delay="600">
+						<img src="images/separador.png" alt="Servicios" class="img-fluid"/>
 					</div>
 					<div class="col-md-6 col-lg-5" data-aos="fade-right" data-aos-delay="900">
 						<div class="box-servicio">
-							<h3>Recolección y transporte</h3>
-							<p>Nos especializamos en el manejo, la operación y explotación del servicio de carga especializada de transporte en caminos y puentes de jurisdicción  tanto  estatal  como federal.</p>
-							<p>Contamos con vehículos para todas las necesidades de los clientes en lo que se refiere a residuos sólidos, líquidos y semisólidos.</p>
+							<h3>Otra columna de servicios</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore eos nulla animi distinctio? Facilis unde consequatur commodi deserunt quidem sit cumque. Maxime praesentium.</p>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis</p>
 						</div>
 						<div class="box-servicio">
-							<h3>Manejo de residuos industriales peligrosos y no peligrosos</h3>
-							<p>Con el personal mejor capacitado y tecnología de punta, manipulamos residuos peligrosos y no peligrosos para favorecer la conservación del medio ambiente.</p>
+							<h3>Sigamos agregando servicios, al cabo que no cuesta nada</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eligendi aperiam nisi minus veritatis eius commodi at animi iste, eum blanditiis nihil</p>
 						</div>
 						<div class="box-servicio">
-							<h3>Tratamiento de aguas contaminadas</h3>
-							<p>Especializados en el manejo del agua y diversos procesos para tratamiento de aguas contaminadas y reutilización.</p>
-							<p>Preocupados por el medio ambiente y el uso adecuado de los recursos naturales, Grupo Verden ha instalado en San Luis Potosí capital, una planta de tratamiento de aguas residuales contaminadas, con una tecnología innovadora en la región, brindando servicio a diversas empresas de la zona así como a clientes de otras áreas del país, interesadas en este proceso.</p>
+							<h3>Ultimo servicio a destacar</h3>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis</p>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non nemo beatae ea! Officiis, magni voluptatum voluptatem nesciunt quo consequatur architecto neque beatae sunt adipisci officia dolor? Ducimus nemo possimus porro? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium doloribus repudiandae eos omnis! Obcaecati, debitis</p>
 						</div>
 
 					</div>
@@ -296,7 +298,7 @@ $config = getConfig();
 		<section id="llamanos">
 		
 			<div class="box-llamanos w-100 px-5 py-5 text-center">
-				<h3 class="mb-3">OBTÉN TU ASESORÍA GRATUITA</h3>
+				<h3 class="mb-3">¿TIENES DUDAS? CONTÁCTANOS</h3>
 				<h2><i class="fas fa-phone"></i> Llámanos al <a href="tel:<?php echo cleanString($config->contactos->telefono); ?>" class="link-phone"><?php echo $config->contactos->telefono; ?></a></h2>
 			</div>
 		
@@ -304,9 +306,9 @@ $config = getConfig();
 
 		<section id="unidades">
 		
-			<div class="box-unidades-center d-none d-xl-block" data-aos="zoom-in" data-aos-delay="300">
-				<img src="images/logo-vertical.png" alt="Grupo Verden" class="img-fluid" />
-				<p class="mt-2">UNIDADES DE SERVICIO</p>
+			<div class="box-unidades-center d-none d-xl-block pt-5" data-aos="zoom-in" data-aos-delay="300">
+				<img src="images/logo.png" alt="Grupo Verden" class="img-fluid" />
+				<p class="mt-4">AMENIDADES</p>
 				<a href="#masinformacion" class="btn btn-link mt-3">SOLICITA MÁS INFORMACIÓN</a>
 			</div>
 				
@@ -315,28 +317,28 @@ $config = getConfig();
 			
 				<div class="row no-gutters">
 
-					<div class="col-md-6 col-unidad box-resimex">
+					<div class="col-md-6 col-unidad box-amenidad1">
 						<div class="box-unidad" data-aos="fade-up-left" data-aos-delay="300">
-							<h3 class="mb-3">RESIMEX</h3>
-							<p>RESIMEX llevamos a cabo todas las actividades de recolección, manejo y acopio de los residuos industrales</p>
+							<h3 class="mb-3">AMENIDADES</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo possimus id sapiente dolorum</p>
 						</div>
 					</div>
-					<div class="col-md-6 col-unidad box-verdenagua">
+					<div class="col-md-6 col-unidad box-amenidad2">
 						<div class="box-unidad" data-aos="fade-up-right" data-aos-delay="600">
-							<img src="images/logo-verdenagua.png" alt="VerdenAgua" class="img-fluid mb-3" /><br/>
-							<p>Disponemos de las aguas industriales contaminadas, especializada en diversos procesos para su tratamiento y reutilización</p>
+							<h3 class="mb-3">AMENIDADES</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo possimus id sapiente dolorum</p>
 						</div>
 					</div>
-					<div class="col-md-6 col-unidad box-verdenenergia">
+					<div class="col-md-6 col-unidad box-amenidad3">
 						<div class="box-unidad" data-aos="fade-down-left" data-aos-delay="300">
-							<img src="images/logo-verdenenergia.png" alt="VerdenEnergía" class="img-fluid mb-3" /><br/>
-							<p>Generamos combustibles alternos ecológicos a la medida, formulados según el equipo y especificaciones de combustión</p>
+							<h3 class="mb-3">AMENIDADES</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo possimus id sapiente dolorum</p>
 						</div>
 					</div>
-					<div class="col-md-6 col-unidad box-carganova">
+					<div class="col-md-6 col-unidad box-amenidad4">
 						<div class="box-unidad" data-aos="fade-down-right" data-aos-delay="600">
-							<img src="images/logo-carga-nova.png" alt="Carga Nova" class="img-fluid mb-3" /><br/>
-							<p>Somos expertos en el manejo, la operación y transporte del servicio de carga especializada en materiales, residuos peligrosos y de manejo especial, en caminos y puentes de jurisdicción tanto estatal como federal</p>
+							<h3 class="mb-3">AMENIDADES</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo possimus id sapiente dolorum</p>
 						</div>
 					</div>					
 				
@@ -350,15 +352,15 @@ $config = getConfig();
 		
 			<div class="slider-logos">
 
-				<h4 class="mb-4 text-white text-center">NUESTROS CLIENTES</h4>
+				<h4 class="mb-4 text-white text-center">NUESTROS CERFIFICADOS</h4>
 
 				<div class="slide-logos d-flex justify-content-around align-items-center">
-					<div><img src="images/logos/estafeta.png" class="img-fluid" alt="Estafeta" /></div>
-					<div><img src="images/logos/sabritas.png" class="img-fluid" alt="Sabritas" /></div>
-					<div><img src="images/logos/mercedes.png" class="img-fluid" alt="Mercedes Benz" /></div>
-					<div><img src="images/logos/chevrolet.png" class="img-fluid" alt="Chevrolet" /></div>
-					<div><img src="images/logos/tracsa.png" class="img-fluid" alt="Tracsa" /></div>
-					<div><img src="images/logos/arca.png" class="img-fluid" alt="Arca Continental" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
 				</div>
 			
 			</div>
@@ -372,7 +374,7 @@ $config = getConfig();
 				<div class="row align-items-center text-center mb-xs-5">
 					<div class="col-md-3">
 						<div class="logo-footer mb-4">
-							<img src="images/logo-vertical.png" alt="Grupo Verden" class="img-fluid" />
+							<img src="images/logo.png" alt="<?php echo $config->info->titulo; ?>" class="img-fluid" />
 						</div>
 					</div>
 					<div class="col-md-4">

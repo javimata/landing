@@ -2,7 +2,6 @@
 	
 	$(document).ready(function(){
 
-<<<<<<< HEAD
 		/*
 		$('.slide-logos').slick({
 			autoplay: true,
@@ -40,31 +39,6 @@
 			};
 		});
 
-=======
-		$('#popup_cotiza').on('show.bs.modal', function (event) {
-		var button = $(event.relatedTarget) // Button that triggered the modal
-		var producto = button.data('producto') // Extract info from data-* attributes
-		var modal = $(this)
-		modal.find('span.nombre-producto').empty().text(producto)
-		modal.find('input[name="producto"]').val(producto)
-		});
-
-		$('.link-phone').click(function(){
-
-			gtag('event', 'click', {'event_category': 'telefono','event_label': 'llamada'});
-
-		});
-
-		$('.link-email').click(function(){
-
-			gtag('event', 'click', {'event_category': 'email','event_label': 'envio'});
-
-		});
-
-		if( jam_popup == 1 ) {
-			$('#popup_home').modal('show');
-		}
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 
 		if( jam_gotop == 1 ){
 			$(window).scroll(function(){
@@ -229,11 +203,8 @@
 			}
 		}
 
-<<<<<<< HEAD
 		$('.loading').delay(2400).slideUp(600);
 
-=======
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 	});
 
 })(jQuery);

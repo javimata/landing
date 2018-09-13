@@ -1,6 +1,5 @@
 /*---------- PRESETS ----------*/
-<<<<<<< HEAD
-@primary:     #04cf85;
+@primary:     #e3d782;
 @secondary:   #191919;
 @black:       #000;
 @white:       #fff;
@@ -9,17 +8,6 @@
 @orange:      #df9f15;
 
 @font1:       'Lato', sans-serif;
-=======
-@primary:     #fb0d1c;
-@secondary:   #6a86a4;
-@black:       #000;
-@white:       #fff;
-@gray:        #f3f2f2;
-@dark:		  #363839;    
-@orange:      #df9f15;
-
-@font1:       'Open Sans', sans-serif;
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 
 body {
 	background: @white;
@@ -28,7 +16,6 @@ body {
 	color: @black;
 	position: relative;
 	font-weight: 300;
-<<<<<<< HEAD
 	overflow-x: hidden;
 }
 
@@ -52,7 +39,7 @@ body {
 
 
 #header {
-	background: @primary;
+	background: @black;
 	color: @white;
 	a {
 		color: @white;
@@ -89,69 +76,12 @@ body {
 				li {
 					a {
 						font-size: 14px !important;
-=======
-}
-
-header#header {
-	padding: 10px 0;
-	.contact-info-top {
-		max-width: 500px;
-		float: right;
-		text-align: right;
-		font-size: 20px;
-		.contact-info-top-title {
-			font-size: 20px;
-		}
-		.contact-info-top-tel {
-			font-weight: 600;
-			color: @primary;
-			a {
-				font-weight: 600;
-				color: @primary;
-			}
-		}
-	}
-	@media ( min-width: 768px ) and ( max-width: 991px ) {
-		.contact-info-top {
-			font-size: 16px;
-		}
-	}
-	@media ( max-width: 767px ) {
-		padding: 0;
-		.col-info {
-			padding: 5px 0;
-			background: @primary;
-			.contact-info-top {
-				float: none;
-				font-size: 16px;
-				text-align: center;
-				max-width: 100%;
-				.contact-info-top-tel {
-					color: @white;
-					font-weight: 400;
-					a {
-						font-size: 16px;
-						font-weight: 300;
-						color: @white;
-						display: inline-block;
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 					}
 				}
 			}
 		}
-<<<<<<< HEAD
 	}
 }
-=======
-		.col-logo {
-			.logo {
-				padding: 1rem 0;
-			}
-		}
-	}
-}
-
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 section#menu {
 	background: @black;
 	ul.nav.menu {
@@ -191,7 +121,6 @@ section#menu {
 	}
 }
 
-<<<<<<< HEAD
 
 section#slider {
 	position: relative;
@@ -200,6 +129,7 @@ section#slider {
 		background: @secondary;
 		color: @white;
 		transition: all 300ms;
+		z-index: 1050;
 		header#header-form {
 			h3 {
 				font-size: 16px;
@@ -218,12 +148,19 @@ section#slider {
 			}
 		}
 	}
+	.tp-caption.a_box {
+		color: #fff;
+		background: rgba(0,0,0,.8);
+		padding: 2em !important;
+		border-radius: 20px;
+	}	
 	@media (min-width: 1199px) {
 		.box-form {
 			border-radius: 20px;
 			position: absolute;
 			max-width: 470px;
-			bottom: -480px;
+			top: 50%;
+			bottom: inherit;
 			right: 10%;
 			box-shadow: 0 0 20px 5px rgba(0,0,0,1);
 			padding: 2em;
@@ -236,7 +173,8 @@ section#slider {
 	}
 	@media (min-width: 1400px) {
 		.box-form {
-			bottom: -420px;
+			top: 50%;
+			bottom: inherit;
 		}
 	}
 	@media (max-width: 767px) {
@@ -252,11 +190,11 @@ section#slider {
 }
 
 
-section#autorizaciones {
+section#nosotros {
 	padding: 100px 0 30px;
 	background-color: #1b1a1e;
-	background: url(../../images/fondo-01.jpg) no-repeat;
-	background-position: bottom right;
+	background: url(../../images/fondo-ubicacion.jpg) no-repeat;
+	background-position: center bottom;
 	background-size: cover;
 	background-attachment: fixed;
 	.box-autorizaciones {
@@ -298,7 +236,7 @@ section#autorizaciones {
 section#servicios {
 	padding: 100px 0;
 	background-color: @dark;
-	background: url('../../images/fondo-servicios.jpg') no-repeat;
+	background: url('../../images/fondo-02.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -367,34 +305,35 @@ section#unidades {
 			margin: auto;
 			max-width: 500px;
 			color: @white;
+			text-shadow: 0 0 20px #000;
 			h3 {
 				font-size: 60px;
 			}
 		}
 	}
-	.box-resimex {
-		background: url('../../images/fondo-resimex.jpg') no-repeat;
+	.box-amenidad1 {
+		background: url('../../images/amenidad-01.jpg') no-repeat;
 	}
-	.box-verdenagua {
-		background: url('../../images/fondo-verdenagua.jpg') no-repeat;
+	.box-amenidad2 {
+		background: url('../../images/amenidad-02.jpg') no-repeat;
 	}
-	.box-verdenenergia {
-		background: url('../../images/fondo-verdenenergia.jpg') no-repeat;
+	.box-amenidad3 {
+		background: url('../../images/amenidad-01.jpg') no-repeat;
 	}
-	.box-carganova {
-		background: url('../../images/fondo-carga.jpg') no-repeat;
+	.box-amenidad4 {
+		background: url('../../images/amenidad-02.jpg') no-repeat;
 	}
 	.box-unidades-center {
-		background: @primary;
-		width: 380px;
-		height: 380px;
+		background: @white;
+		width: 300px;
+		height: 300px;
 		text-align: center;
 		p {
 			font-size: 20px;
 			font-weight: 400;
 		}
 		a {
-			color: @white;
+			color: @primary;
 			text-decoration: underline
 		}
 	}
@@ -404,8 +343,8 @@ section#unidades {
 			top: 50%;
 			left: 50%;
 			z-index: 99;
-			background: @primary;
-			color: @white;
+			background: @black;
+			color: @primary;
 			padding: 1em;
 			transform: translateX(-50%) translateY(-50%);
 			transform-origin: center;
@@ -437,7 +376,7 @@ section#nuestros-clientes {
 footer#footer {
 	padding: 100px 0 50px;
 	background-color: @dark;
-	background: url('../../images/fondo-footer.jpg') no-repeat;
+	background: url('../../images/fondo-03.jpg') no-repeat;
 	background-position: center right;
 	background-size: cover;
 	color: @white;
@@ -492,41 +431,11 @@ footer#footer {
 				}
 			}
 		}
-=======
-footer#footer {
-	padding: 40px 0;
-	background-color: @dark;
-	color: @white;
-	font-size: 13px;
-	color: #8c8989;
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		li {
-			a {
-				display: block;
-			}
-		}
-	}
-	a {
-		color: @white;
-		&:hover {
-			color: #8c8989;
-		}
-	}
-	h4 {
-		color: @white;
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 	}
 }
 
 section#copy {
-<<<<<<< HEAD
-	background: @primary;
-=======
-	background: @dark;
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
+	background: @black;
 	padding: 15px 0;
 	font-size: 12px;
 	color: @white;
@@ -582,7 +491,6 @@ section#copy {
 }
 */
 
-<<<<<<< HEAD
 
 
 
@@ -615,8 +523,6 @@ section#copy {
 }
 
 
-=======
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 .bg-gray {
 	background: @gray;
 }
@@ -667,17 +573,11 @@ h1,h2,h3,h4,h5,h6 {
 	color: @white;
 	border: 0;
 	padding: 12px 30px;
-<<<<<<< HEAD
 	border-radius: 5px;
 	transition: all 300ms;
 	&:hover {
 		background: @white;
 		color: @black;
-=======
-	border-radius: 0;
-	&:hover {
-		background: @black;
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 	}
 	&.btn-popup {
 		&:hover {
@@ -697,7 +597,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .form-control {
-<<<<<<< HEAD
 	background: @dark;
 	color: @white;
 	border: 0;
@@ -710,11 +609,6 @@ h1,h2,h3,h4,h5,h6 {
 ::placeholder {
   color: @white !important;
 }
-=======
-	border-radius: 0;
-}
-
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
 
 button.close {
 	position: relative;

@@ -6,7 +6,7 @@
 var setREVStartSize = function() {
     var tpopt = new Object(); 
         tpopt.startwidth = 1140;
-        tpopt.startheight = 430;
+        tpopt.startheight = 750;
         tpopt.container = $('#rev_slider_2_1');
         tpopt.fullScreen = "off";
         tpopt.forceFullWidth="on";
@@ -33,14 +33,14 @@ if(tpj('#rev_slider_2_1').revolution == undefined){
         dottedOverlay:"none",
         delay:9000,
         startwidth:1140,
-        startheight:430,
+        startheight:600,
         hideThumbs:200,
         thumbWidth:100,
         thumbHeight:50,
         thumbAmount:1,
         simplifyAll:"off",                      
-        navigationType:"bullet",
-        navigationArrows:"none",
+        navigationType:"none",
+        navigationArrows:"default",
         navigationStyle:"round",                        
         touchenabled:"on",
         onHoverStop:"on",                       
