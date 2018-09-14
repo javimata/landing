@@ -74,3 +74,19 @@ function getConfig() {
     return $config;
 
 }
+
+
+/**
+ * validate Actual URL
+ */
+function validateUrl( $url = NULL ){
+
+    if ( $url == "" ) {
+
+        $url = $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];
+
+    }
+
+    return $url;
+
+}

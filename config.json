@@ -2,8 +2,8 @@
     "info": {
         "titulo": "Hotel del Rey - La mejor ubicación",
         "descripcion": "La mejor ubicación con el mejor servicio a tu disposición, resaltando la calidad y el buen gusto que su familia merece",
-        "analytics": "",
-        "fbpixel": "",
+        "googleAnalytics": "",
+        "fbPixel": "",
         "email-contacto": "",
         "email-contacto-cc": "",
         "email-contacto-bcc": "",
@@ -18,11 +18,11 @@
     },
     "redes":{
         "facebook": {
-            "url": "#",
+            "url": "https://www.facebook.com/JaviMataDev/",
             "icon": "facebook"
         },
         "twitter": {
-            "url": "#",
+            "url": "https://www.twitter.com/Javi_Mata",
             "icon": "twitter"
         }
     },
@@ -60,9 +60,28 @@
         }
     },
     "configuracion": {
+        "openGraph": 1,
         "gotop": 1,
         "popup": 0,
         "revolution": 1,
-        "loading": 0
+        "loading": 0,
+        "fonts": {
+            "Lato": {
+                "fontfamily": "'Lato', sans-serif",
+                "weight": "300,400,700,900"
+            },
+            "Open sans": {
+                "fontfamily": "'Open Sans', sans-serif",
+                "weight": "300,400,600,700"
+            }
+        },
+        "assets": {
+            "slick": 0,
+            "matchHeight": 0,
+            "aos": 1,
+            "animate": 1,
+            "validate": 1,
+            "fontawesome": 1
+        }
     }
 }
