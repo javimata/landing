@@ -154,7 +154,7 @@ $config = getConfig();
 					<div class="d-none d-xl-block col-xl-3 text-right">
 						<div class="box-tel-top">
 							Haz tu reservación ahora:<br />
-							<a href="tel:<?php echo cleanString($config->contactos->telefono); ?>"><i class="fas fa-mobile-alt"></i> <?php echo $config->contactos->telefono; ?></a>
+							<a href="tel:<?php echo cleanString($config->contactos->telefono); ?>"><i class="fas fa-phone"></i> <?php echo $config->contactos->telefono; ?></a>
 						</div>
 					</div>
 					<div class="col-12 d-xl-none">
@@ -182,37 +182,46 @@ $config = getConfig();
 					<p class="text-form">Deja tus datos y nuestros asesores te contactarán a la brevedad con la información para tus necesidades</p>
 				</header>
 				<div class="box-campos">
-					<form action="php/process.php" id="masinfo">
+					<form action="php/process.php" id="reservacion" novalidate="novalidate">
 					<div class="row">
 						<div class="form-group col-12">
-							<input type="text" name="nombre" placeholder="Nombre Completo *" class="form-control" />
+							<input type="text" name="nombre" id="nombre" placeholder="Nombre Completo *" class="form-control" required minlength="3" />
 						</div>
 						<div class="form-group col-12">
-							<input type="email" name="email" placeholder="Email *" class="form-control" />
+							<input type="email" name="email" placeholder="Email *" class="form-control" required />
 						</div>
 						<div class="form-group col-12">
 							<input type="text" name="telefono" placeholder="Teléfono" class="form-control" />
 						</div>
 						<div class="form-group col-md-6">
-							<label>Entrada</label>
-							<input type="date" name="entrada" class="form-control" />
+							<label><i class="far fa-calendar-alt"></i> Entrada</label>
+							<input type="date" name="entrada" min="<?php echo date('Y-m-d'); ?>" class="form-control" />
 						</div>
 						<div class="form-group col-md-6">
-							<label>Salida</label>
-							<input type="date" name="salida" class="form-control" />
+							<label><i class="far fa-calendar-alt"></i> Salida</label>
+							<input type="date" name="salida" min="<?php echo date('Y-m-d', strtotime("+ 1 day")); ?>" class="form-control" />
 						</div>
 						<div class="form-group col-md-6">
-							<select name="servicio" id="tipo_servicio" class="form-control">
+							<select name="adultos" id="tipo_servicio" class="form-control">
 								<option value="">Adultos</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
 							</select>
 						</div>
 						<div class="form-group col-md-6">
-							<select name="servicio" id="tipo_servicio" class="form-control">
+							<select name="menores" id="tipo_servicio" class="form-control">
 								<option value="">Menores</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
 							</select>
 						</div>						
 						<div class="form-group col-12">
 							<button class="btn btn-primary btn-full">QUIERO MÁS INFORMACIÓN</button>
+							<div class="caja_error">&nbsp;</div>
 						</div>
 					</div>
 					</form>
@@ -323,7 +332,7 @@ $config = getConfig();
 			<div class="box-unidades-center d-none d-xl-block pt-5" data-aos="zoom-in" data-aos-delay="300">
 				<img src="images/logo.png" alt="Grupo Verden" class="img-fluid" />
 				<p class="mt-4">AMENIDADES</p>
-				<a href="#masinformacion" class="btn btn-link mt-3">SOLICITA MÁS INFORMACIÓN</a>
+				<a href="#masinformacion" class="btn btn-link mt-3">¡RESERVA AHORA!</a>
 			</div>
 				
 
@@ -387,9 +396,19 @@ $config = getConfig();
 			<div class="container">
 				<div class="row align-items-center text-center mb-xs-5">
 					<div class="col-md-3">
-						<div class="logo-footer mb-4">
+						<div class="logo-footer mb-3">
 							<img src="images/logo.png" alt="<?php echo $config->info->titulo; ?>" class="img-fluid" />
 						</div>
+						<?php if ( count($config->redes) > 0): ?>
+						<div class="redes-footer my-5">
+						<ul class="m-0 p-0">
+						<?php foreach( $config->redes as $key => $red ): ?>
+							<li class="<?php echo $key; ?> px-2"><a href="<?php echo $red->url; ?>" target="_blank"><i class="<?php echo $red->icon; ?>"></i></a></li>
+						<?php endforeach; ?>
+						</ul>
+						<?php endif; ?>
+						</div>
+
 					</div>
 					<div class="col-md-4">
 						<div class="contact-footer mb-4">
@@ -406,7 +425,7 @@ $config = getConfig();
 							<header id="header-form">
 								<h3>Descarga el folleto</h3>
 							</header>
-							<form action="php/process.php">
+							<form action="php/process.php" id="descarga">
 								<div class="box-campos mt-3">
 									<div class="form-group">
 										<input type="text" name="nombre" class="form-control" placeholder="Nombre completo *" /> 
@@ -415,8 +434,8 @@ $config = getConfig();
 										<input type="email" name="email" class="form-control" placeholder="Email *" />
 									</div>
 									<div class="form-group">
-										<button type="submit" class="btn btn-primary btn-full">DESCARGAR PDF</button>
-										<div class="caja_error"></div>
+										<button type="submit" class="btn btn-primary btn-full mb-3">DESCARGAR AHORA</button>
+										<div class="caja_error">&nbsp;</div>
 									</div>
 								</div>							
 							</form>
@@ -463,10 +482,6 @@ $config = getConfig();
 
 		<?php if ( $config->configuracion->assets->slick == 1 ): ?>
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-		<?php endif; ?>
-
-		<?php if ( $config->configuracion->assets->validate == 1 ): ?>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 		<?php endif; ?>
 
 		<?php if ( $config->configuracion->revolution == 1 ): ?>

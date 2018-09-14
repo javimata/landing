@@ -52,8 +52,8 @@ function cleanString( $text="" ) {
  */
 function replaceString( $text = "" ) {
 
-    $strS = array('[Y]','[adview]');
-    $strL = array(date('Y'),'<a href="http://www.adview.mx" target="_blank"><img src="images/logo-adview.png" class="img-fluid" /></a>');
+    $strS = array('[Y]');
+    $strL = array(date('Y'));
 
     $text = str_replace($strS,$strL,$text);
 
@@ -66,10 +66,11 @@ function replaceString( $text = "" ) {
  *
  * @return void
  */
-function getConfig() {
+function getConfig( $sub = null ) {
 
-    $jsonStr = file_get_contents("config.json");
-    $config  = json_decode($jsonStr);
+    $file = (!$sub) ? "config.json" : "../config.json" ;
+    $jsonStr = file_get_contents( $file );
+    $config  = json_decode( $jsonStr );
 
     return $config;
 

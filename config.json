@@ -4,9 +4,6 @@
         "descripcion": "La mejor ubicación con el mejor servicio a tu disposición, resaltando la calidad y el buen gusto que su familia merece",
         "googleAnalytics": "",
         "fbPixel": "",
-        "email-contacto": "",
-        "email-contacto-cc": "",
-        "email-contacto-bcc": "",
         "copyright": "© [Y]. Todos los Derechos Reservados Aviso de Privacidad.",
         "url": "",
         "logo": "images/logo.png"
@@ -19,11 +16,15 @@
     "redes":{
         "facebook": {
             "url": "https://www.facebook.com/JaviMataDev/",
-            "icon": "facebook"
+            "icon": "fab fa-facebook-square fa-2x"
         },
         "twitter": {
             "url": "https://www.twitter.com/Javi_Mata",
-            "icon": "twitter"
+            "icon": "fab fa-twitter fa-2x"
+        },
+        "youtube": {
+            "url": "https://www.youtube.com/channel/UC9DsDoLOjKvAAuCK3-CRCwA",
+            "icon": "fab fa-youtube fa-2x"
         }
     },
     "menu": {
@@ -43,20 +44,39 @@
             "url": "#contacto"
         }
     },
-    "productos": {        
-        "producto1": {
-            "titulo": "",
-            "descripcion": "",
-            "modelo": "",
-            "flag": "",
-            "imagen": ""
-        },
-        "producto2": {
-            "titulo": "",
-            "descripcion": "",
-            "modelo": "",
-            "flag": "",
-            "imagen": ""
+    "forms": {
+        "descarga": {
+            "action": "",
+            "class": "",
+            "method": "",
+            "attribs": {},
+            "mailchimpList": "",
+            "fields": {
+                "nombre": {
+                    "class": "",
+                    "id": "",
+                    "attribs": {
+                        "type": "text",
+                        "class": "form-control",
+                        "id": "",
+                        "value": "",
+                        "placeholder": "Nombre completo",
+                        "required": 1
+                    }
+                },
+                "email": {
+                    "class": "",
+                    "id": "",
+                    "attribs": {
+                        "type": "email",
+                        "class": "form-control",
+                        "id": "",
+                        "value": "",
+                        "placeholder": "Email",
+                        "required": 1
+                    }
+                }
+            }
         }
     },
     "configuracion": {
@@ -70,7 +90,7 @@
                 "fontfamily": "'Lato', sans-serif",
                 "weight": "300,400,700,900"
             },
-            "Open sans": {
+            "Open Sans": {
                 "fontfamily": "'Open Sans', sans-serif",
                 "weight": "300,400,600,700"
             }
@@ -80,8 +100,27 @@
             "matchHeight": 0,
             "aos": 1,
             "animate": 1,
-            "validate": 1,
             "fontawesome": 1
+        },
+        "mailer": {
+            "auth": 0,
+            "to": "javimata@gmail.com",
+            "cc": "",
+            "bcc": "",
+            "replyTo": "",
+            "from": "",
+            "fromName": "",
+            "host": "",
+            "port": "",
+            "smtpSecure": "tls",
+            "userName": "",
+            "password": ""
+        },
+        "mailchimp": {
+            "use": 0,
+            "api": "",
+            "listID1": "",
+            "listID2": ""
         }
     }
 }

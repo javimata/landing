@@ -13,12 +13,15 @@
 		});
 		*/
 
-
-
+		/**
+		 * Agrega automaticamente la clase por tipo de enlace para agregar los objetivos o acciones necesarias
+		 */
 		$('a[href^=tel]').addClass("link-phone");
 		$('a[href^=mailto]').addClass("link-email").attr("target", "_blank");
 
-		// Manejo de Eventos
+		/**
+		 * Agrega los eventos de Google Analytics y de Facebook Pixel usando las clases agregadas antes y verificando la función existente para ser usada
+		 */
 		$('.link-phone').click(function () {
 			if (typeof gtag == 'function') {
 				gtag('event', 'click', { 'event_category': 'telefono', 'event_label': 'llamada' });
@@ -37,9 +40,14 @@
 			if (typeof ga == 'function') {
 				ga('send', 'event', 'email', 'click', 'envio');
 			};
+			if (typeof fbq == 'function') {
+			}
 		});
 
 
+		/**
+		 * Agrega el botón de regresar arriba
+		 */
 		if( jam_gotop == 1 ){
 			$(window).scroll(function(){
 				if($(this).scrollTop()>100){
@@ -54,7 +62,11 @@
 			});
 		};
 
-		// Select all links with hashes
+		/**
+		 * Agrega la navegación scroll de una sola página
+		 * Se deben agregar los enlaces con el hash # y el ID de la sección a enlazar
+		 * las opciones .not son los negativos a agregar como enlaces de scroll
+		 */
 		$('a[href*="#"]')
 		// Remove links that don't actually link to anything
 		.not('[href="#"]')
@@ -94,81 +106,174 @@
 			}
 		});
 
-		$("#masinfo").submit(function(e){
+		/**
+		 * Formularios
+		 */
+		$("form#reservacion").submit(function(e){
 			e.preventDefault();
 			
-			var $form = $(this);
-			var url   = $(this).attr("action");
+			var $form     = $(this),
+			    url       = $(this).attr("action"),
+			    id        = $(this).attr("id")
+			    cajaError = $("#" + id + " .caja_error"),
+			    errores   = 0;
 
-			$(".caja_error").empty().removeClass("alert alert-info");
+			cajaError.empty().removeClass("alert alert-info");
+			$form.find('.resalta').removeClass('resalta');
 
-			var fnombre 	= $form.find('input[name="nombre"]').val(),
-				femail      = $form.find('input[name="email"]').val(),
-				ftelefono	= $form.find('input[name="telefono"]').val(),
-				fciudad     = $form.find('input[name="ciudad"]').val(),
-				faviso      = $form.find('input[name="aviso"]').val();
+			var fnombre   = $form.find('input[name="nombre"]').val(),
+			    femail    = $form.find('input[name="email"]').val(),
+			    ftelefono = $form.find('input[name="telefono"]').val(),
+			    fentrada  = $form.find('select[name="entrada"]').val(),
+			    fsalida   = $form.find('select[name="salida"]').val(),
+			    fadultos  = $form.find('select[name="adultos"]').val(),
+			    fmenores  = $form.find('select[name="menores"]').val();
 
 			var emailReg 	= new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/);
 
 			if ( fnombre.length <=3 ) {
 				$form.find('input[name="nombre"]').addClass('resalta').focus();
-				$(".caja_error").empty().prepend("<span class=\"glyphicon glyphicon-exclamation-sign\"></span> Por favor indica tu nombre");
+				cajaError.empty().prepend("<span class=\"fas fa-exclamation-triangle\"></span> Por favor indica tu nombre");
 				return false;
 				var errores=1;
 			};
 
-			if ( ftelefono.length < 3 ) {
-				$form.find('input[name="telefono"]').addClass('resalta').focus();
-				$(".caja_error").empty().prepend("<span class=\"glyphicon glyphicon-exclamation-sign\"></span> Por favor indica tu teléfono");
-				return false;
-				var errores=1;
-			};	
-
 			if ( !emailReg.test(femail) ) {
 				$form.find('input[name="email"]').addClass('resalta').focus();
-				$(".caja_error").empty().prepend("<span class=\"glyphicon glyphicon-exclamation-sign\"></span> Por favor indica tu email");
+				cajaError.empty().prepend("<span class=\"fas fa-exclamation-triangle\"></span> Por favor indica tu email");
 				return false;
 				var errores=1;
 			};	
-
-			if ( !$form.find('input[name="aviso"]').prop('checked') ) {
-				$(".caja_error").empty().prepend("<span class=\"glyphicon glyphicon-exclamation-sign\"></span> Es necesario aceptar el aviso de privacidad");
-				return false;
-				var errores=1;
-			}
 
 
 			if (errores!=1){
 
-				$("#masinfo button.btn-primary").attr("disabled","disabled");
+				$("#" + id + " button.btn-primary").attr("disabled","disabled");
 
 				$.post( url, { 
 					nombre:fnombre,
 					email:femail,
 					telefono:ftelefono,
-					ciudad:fciudad,
+					entrada:fentrada,
+					salida: fsalida,
+					adultos: fadultos,
+					menores: fmenores,
 					a:1
 					}, 
 					function( data ) {
 						if (parseInt(data.respuesta)==1){
-							$(".caja_error").empty().addClass("alert alert-info").append(data.texto_respuesta);
-							$("#masinfo")[0].reset();
-							gtag('event', 'click', {'event_category': 'formulario','event_label': 'masinfo'});
+							cajaError.empty().addClass("alert alert-info").append(data.texto_respuesta);
+							$("#" + id)[0].reset();
+
+							if (typeof gtag == 'function') {
+								gtag('event', 'click', { 'event_category': 'formulario', 'event_label': id });
+							};
+							if (typeof ga == 'function') {
+								ga('send', 'event', 'formulario', 'click', id);
+							};
+							if (typeof fbq == 'function') {
+							}
+
 						}else{
 							alert(data.texto_respuesta);
-							$("#masinfo button.btn-primary").removeAttr("disabled");
+							$("#" + id + " button.btn-primary").removeAttr("disabled");
 						};
 				}, "json");
 
 				
 			}else{
-				$("#masinfo button#btn-enviar").removeAttr("disabled");
+				$("#" + id + " button#btn-enviar").removeAttr("disabled");
 
 			};
 
 		});
 
 
+		$("form#descarga").submit(function (e) {
+			e.preventDefault();
+
+			var $form     = $(this),
+			    url       = $(this).attr("action"),
+			    id        = $(this).attr("id")
+			    cajaError = $("#" + id + " .caja_error"),
+			    errores   = 0;
+
+			cajaError.empty().removeClass("alert alert-info");
+			$form.find('.resalta').removeClass('resalta');
+
+			var fnombre = $form.find('input[name="nombre"]').val(),
+				femail = $form.find('input[name="email"]').val();
+
+			var emailReg = new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/);
+
+			if (fnombre.length <= 3) {
+				$form.find('input[name="nombre"]').addClass('resalta').focus();
+				cajaError.empty().prepend("<span class=\"fas fa-exclamation-triangle\"></span> Por favor indica tu nombre");
+				return false;
+				var errores = 1;
+			};
+
+			if (!emailReg.test(femail)) {
+				$form.find('input[name="email"]').addClass('resalta').focus();
+				cajaError.empty().prepend("<span class=\"fas fa-exclamation-triangle\"></span> Por favor indica tu email");
+				return false;
+				var errores = 1;
+			};
+
+
+			if (errores != 1) {
+
+				$("#" + id + " button.btn-primary").attr("disabled", "disabled");
+
+				$.post(url, {
+					nombre: fnombre,
+					email: femail,
+					a: 2
+				},
+					function (data) {
+						if (parseInt(data.respuesta) == 1) {
+							cajaError.empty().addClass("alert alert-info").append(data.texto_respuesta);
+							$("#" + id + " button.btn-primary").removeAttr("disabled");
+							$("#" + id)[0].reset();
+
+							if (typeof gtag == 'function') {
+								gtag('event', 'click', { 'event_category': 'formulario', 'event_label': id });
+							};
+							if (typeof ga == 'function') {
+								ga('send', 'event', 'formulario', 'click', id);
+							};
+							if (typeof fbq == 'function') {
+							}
+
+						} else {
+							alert(data.texto_respuesta);
+							$("#" + id + " button.btn-primary").removeAttr("disabled");
+						};
+					}, "json");
+
+
+			} else {
+				$("#" + id + " button#btn-enviar").removeAttr("disabled");
+
+			};
+
+		});
+
+
+
+
+
+
+		/**
+		 * Crea y obtiene cookies
+		 * Para crear una cookie se envía la siguiente información
+		 * @param {string} cname Nombre de la cookie
+		 * @param {string} cvalue Valor de la cookie a crear
+		 * @param {number} exdays Dias de vida de la cookie
+		 * 
+		 * Para obtener una cookie se solicita por su nombre, ejemplo:
+		 * getCookie("nombre")
+		 */
 		function setCookie(cname, cvalue, exdays) {
 			var d = new Date();
 			d.setTime(d.getTime() + (exdays * 60 * 1000));
@@ -191,18 +296,10 @@
 			return "";
 		}
 
-		function checkCookie() {
-			var user = getCookie("username");
-			if (user != "") {
-				alert("Welcome again " + user);
-			} else {
-				user = prompt("Please enter your name:", "");
-				if (user != "" && user != null) {
-					setCookie("username", user, 365);
-				}
-			}
-		}
 
+		/**
+		 * Maneja el loading ocultandolo al terminar de cargar el sitio
+		 */
 		$('.loading').delay(2400).slideUp(600);
 
 	});

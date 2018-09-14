@@ -4,10 +4,11 @@
 @black:       #000;
 @white:       #fff;
 @gray:        #f3f2f2;
-@dark:		  #535353;    
+@dark:		  #464646;
 @orange:      #df9f15;
 
 @font1:       'Lato', sans-serif;
+@font2:		  'Open Sans', sans-serif;
 
 body {
 	background: @white;
@@ -125,7 +126,7 @@ section#menu {
 section#slider {
 	position: relative;
 	.box-form {
-		padding: 2em 15px;
+		padding: 2em 15px 0;
 		background: @secondary;
 		color: @white;
 		transition: all 300ms;
@@ -147,6 +148,10 @@ section#slider {
 				font-weight: 300;
 			}
 		}
+		.caja_error {
+			font-size: 14px;
+			margin: 1rem 0 0;
+		}
 	}
 	.tp-caption.a_box {
 		color: #fff;
@@ -163,7 +168,7 @@ section#slider {
 			bottom: inherit;
 			right: 10%;
 			box-shadow: 0 0 20px 5px rgba(0,0,0,1);
-			padding: 2em;
+			padding: 2em 2em 0;
 			&.fixed {
 				position: fixed;
 				bottom: inherit;
@@ -318,10 +323,10 @@ section#unidades {
 		background: url('../../images/amenidad-02.jpg') no-repeat;
 	}
 	.box-amenidad3 {
-		background: url('../../images/amenidad-01.jpg') no-repeat;
+		background: url('../../images/amenidad-03.jpg') no-repeat;
 	}
 	.box-amenidad4 {
-		background: url('../../images/amenidad-02.jpg') no-repeat;
+		background: url('../../images/amenidad-04.jpg') no-repeat;
 	}
 	.box-unidades-center {
 		background: @white;
@@ -392,6 +397,14 @@ footer#footer {
 			text-decoration: underline;
 			&:hover {
 				color: @white;
+			}
+		}
+	}
+	.redes-footer {
+		ul {
+			list-style: none;
+			li {
+				display: inline;
 			}
 		}
 	}
@@ -496,15 +509,15 @@ section#copy {
 
 
 .loading {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: fixed;
-    background: @primary;
+    background: @dark;
     z-index: 9999;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #666;
+	color: #979797;
 	font-size: 12px;
 	flex-direction: column;
 	img {
@@ -601,6 +614,11 @@ h1,h2,h3,h4,h5,h6 {
 	background: @dark;
 	color: @white;
 	border: 0;
+	position: relative;
+	&.resalta {
+		box-shadow: 0 0 10px @primary;
+		animation: pulse .5s;
+	}
 	&:focus {
 		background: @dark;
 		color: @white;
@@ -649,9 +667,9 @@ button.close {
 	    text-align: center;
 	    font-size: 16px;
 	    font-weight: 700;
-	    color: #fff;
+	    color: @white;
 	}
 	&:hover {
-		background-color: rgba(0,0,0,1);
+		background-color: @black;
 	}
 }
