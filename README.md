@@ -1,7 +1,4 @@
 # Landing page simple base
-<<<<<<< HEAD
-Landing base en PHP con config JSON
-=======
 ## Landing base en PHP con config JSON
 
 Base de Landing sin DB, utilizando archivo json para configuración  
@@ -17,4 +14,3 @@ Base de Landing sin DB, utilizando archivo json para configuración
 |AOS|2.3.0|https://github.com/michalsnik/aos|
 |Animate CSS|3.5.2|https://github.com/daneden/animate.css|
 |PHP Mailer|5.2.13|https://github.com/PHPMailer/PHPMailer|
->>>>>>> 6eddc0066ed4694ddc2f3a76dd663be097999952
