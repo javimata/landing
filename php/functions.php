@@ -113,13 +113,31 @@ function createForm( $form = NULL ){
         if ( $id != "" ) { $formHTML .= ' id="' . $id . '"'; }
         if ( $mailchimpList != "" ) { $formHTML .= ' data-mclist="' . $mailchimpList . '"'; }
 
-
         $formHTML .= '>';
-        $fields = $form->fields;
+ 
+        // $fields = $form->fields;
+        createField($form->fields);
 
         $formHTML .= '</form>';
         echo $formHTML;
 
     }
+
+}
+
+/**
+ * Crea campos, recibe un objeto $fields
+ */
+function createField( $fields ){
+
+    $fieldsHTML = "";
+    foreach ($fields as $key => $field) {
+        
+        $fieldsHTML .= '<div class="'.$field->class.'" id="'.$field->id.'" >';
+        $fieldsHTML .= '</div>';
+        
+    }
+
+    return $fieldsHTML;
 
 }

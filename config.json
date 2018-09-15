@@ -78,7 +78,41 @@
                     }
                 }
             }
-        }
+        },
+        "reserva": {
+            "action": "",
+            "class": "",
+            "id": "descarga",
+            "method": "",
+            "attribs": {},
+            "mailchimpList": "",
+            "fields": {
+                "nombre": {
+                    "class": "",
+                    "id": "",
+                    "attribs": {
+                        "type": "text",
+                        "class": "form-control",
+                        "id": "",
+                        "value": "",
+                        "placeholder": "Nombre completo",
+                        "required": 1
+                    }
+                },
+                "email": {
+                    "class": "",
+                    "id": "",
+                    "attribs": {
+                        "type": "email",
+                        "class": "form-control",
+                        "id": "",
+                        "value": "",
+                        "placeholder": "Email",
+                        "required": 1
+                    }
+                }
+            }
+        }        
     },
     "configuracion": {
         "openGraph": 1,
