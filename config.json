@@ -48,6 +48,7 @@
         "descarga": {
             "action": "",
             "class": "",
+            "id": "descarga",
             "method": "",
             "attribs": {},
             "mailchimpList": "",

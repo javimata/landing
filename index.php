@@ -425,6 +425,7 @@ $config = getConfig();
 							<header id="header-form">
 								<h3>Descarga el folleto</h3>
 							</header>
+							<?php createForm( $config->forms->descarga ); ?>
 							<form action="php/process.php" id="descarga">
 								<div class="box-campos mt-3">
 									<div class="form-group">

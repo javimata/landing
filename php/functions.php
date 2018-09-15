@@ -91,3 +91,35 @@ function validateUrl( $url = NULL ){
     return $url;
 
 }
+
+
+/**
+ * crea un formulario pasando el objeto del mismo a la funcion
+ */
+function createForm( $form = NULL ){
+
+    if ( $form ) {
+        // var_dump($form);
+        $action        = ($form->action != "") ? $form->action : "php/process.php";
+        $method        = ($form->method != "") ? $form->method : "POST";
+        $class         = ($form->class != "") ? $form->class : "";
+        $id            = ($form->id != "") ? $form->id : "";
+        $attribs       = ($form->attribs != "") ? $form->attribs : "";
+        $mailchimpList = ($form->mailchimpList != "") ? $form->mailchimpList : "";
+
+        $formHTML  = '';
+        $formHTML .= '<form action="'.$action.'" method="'.$method.'"';
+        if ( $class != "" ) { $formHTML .= ' class="' . $class . '"'; }
+        if ( $id != "" ) { $formHTML .= ' id="' . $id . '"'; }
+        if ( $mailchimpList != "" ) { $formHTML .= ' data-mclist="' . $mailchimpList . '"'; }
+
+
+        $formHTML .= '>';
+        $fields = $form->fields;
+
+        $formHTML .= '</form>';
+        echo $formHTML;
+
+    }
+
+}
