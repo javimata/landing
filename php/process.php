@@ -34,10 +34,12 @@ if ( isset($_REQUEST['form']) ) {
 		$mailchimpApi = $useMailchimp->api;
 		include('Mailchimp.php');
 		$MailChimp = new MailChimp($mailchimpApi);
-		
+		$mailchimpList = $form->mailchimpList;
+		$mailchimpData = new stdClass;
+
 	}
 
-	if ( $a == 1 && isset($_REQUEST['form']) ){
+	if ( $a == 1 ){
 		
 		$subject = $form->titleMail;
 		$body = "<strong>Datos del solicitante:</strong><br>";
@@ -45,21 +47,23 @@ if ( isset($_REQUEST['form']) ) {
 			if ( $field->attribs->type != "submit" ) {
 				$body .= '<strong>'.$field->name.'</strong>: ' . $_REQUEST[$field->name] . "<br>";
 			}
-			if ( $field->attribs->name == "email" ) {
+			if ( $field->name == "email" ) {
 				$email = $_REQUEST["email"];
 			}
-			if ( $field->attribs->name == "nombre" ) {
+			if ( $field->name == "nombre" ) {
 				$nombre = $_REQUEST["nombre"];
 			}
+
+			if ( $useMailchimp->use == 1 && $field->mailchimpField != "" ){
+				$mailchimpData->{$field->mailchimpField} = $_REQUEST[$field->name];
+			}
+
 		}
 		$body .= "<strong>Fecha de envío:</strong> $fecha";
 		
 		$texto_respuesta = $form->successMail;
 		$success = 1;
 
-		if ( $useMailchimp->use == 1 ){
-			$mailchimpData = array('FNAME'=>$nombre);
-		}
 
 	}
 	
@@ -111,33 +115,19 @@ if ( isset($_REQUEST['form']) ) {
 		}
 
 
-		if ( $useMailchimp->use == 1 && $form->mailchimpList != "" ){
+		if ( $useMailchimp->use == 1 && $mailchimpList != "" ){
 
-			/*
-			$result = $MailChimp->call('lists/subscribe', array(
-							'id'                => $mailchimpList,
-							'email'             => array('email'=>$email),
-							'merge_vars'        => $mailchimpData,
-							'double_optin'      => false,
-							'update_existing'   => true,
-							'replace_interests' => false,
-							'send_welcome'      => false,
-						));
-			*/
-
-			$result = $MailChimp->post('lists/$form->mailchimpList/members', [
+			$result = $MailChimp->post('lists/'.$mailchimpList.'/members', [
 				'email_address' => $email,
 				'merge_fields'  => $mailchimpData,
-				'status'        => 'subscribed'
+				'status'        => 'subscribed',
 			]);
 						
 			if ($result["status"]=="error"){
-				// echo "Error";
 				$mailchimp_respuesta = "Error " . $result["code"] . " " . $result["name"] . " " . $result["error"];
 				$subject_mailchimp 	 = "Error en envio a MailChimp";
 
 			}else{
-				// echo "OK";
 				$mailchimp_respuesta = "Ok";
 				$subject_mailchimp = "Envio a MailChimp";
 

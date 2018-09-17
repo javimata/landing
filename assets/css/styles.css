@@ -391,6 +391,13 @@ section#copy {
   font-size: 12px;
   color: #fff;
 }
+.slick-slide {
+  padding: 0 1em;
+  text-align: center;
+}
+.slick-slide img {
+  display: inline-block;
+}
 /*
 .popup-main {
 	.modal-dialog {

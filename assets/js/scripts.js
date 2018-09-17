@@ -2,16 +2,36 @@
 	
 	$(document).ready(function(){
 
-		/*
 		$('.slide-logos').slick({
 			autoplay: true,
 			slidesToShow: 6,
+			slidesToScroll: 1,
 			infinite: true,
-			adaptiveHeight: true,
+			adaptiveHeight: false,
 			centerMode: false,
-			variableWidth: true
+			centerPadding: '60px',
+			variableWidth: false,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						arrows: false,
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 4
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						arrows: false,
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 3
+					}
+				}
+			]			
 		});
-		*/
 
 		/**
 		 * Agrega automaticamente la clase por tipo de enlace para agregar los objetivos o acciones necesarias
@@ -133,7 +153,7 @@
 					dataType: "json",
 					success: function( data ) {
 						if (parseInt(data.respuesta)==1){
-							cajaError.empty().addClass("alert alert-info").append(data.texto_respuesta + "\n" + data.mailchimp_respuesta);
+							cajaError.empty().addClass("alert alert-info").append(data.texto_respuesta);
 							$("#" + id + " button.btn-primary").removeAttr("disabled");
 							$("#" + id)[0].reset();
 

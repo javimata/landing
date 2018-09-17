@@ -342,6 +342,9 @@ $config = getConfig();
 					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
 					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
 					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
+					<div><img src="images/iso.png" class="img-fluid" alt="Iso 9000" /></div>
 				</div>
 			
 			</div>

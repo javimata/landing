@@ -63,6 +63,7 @@
                     "class": "form-group",
                     "id": "",
                     "name": "nombre",
+                    "mailchimpField": "FNAME",
                     "attribs": {
                         "type": "text",
                         "class": "form-control",
@@ -118,6 +119,7 @@
                     "class": "form-group col-12",
                     "id": "",
                     "name": "nombre",
+                    "mailchimpField": "FNAME",
                     "attribs": {
                         "type": "text",
                         "class": "form-control",
@@ -144,6 +146,7 @@
                     "class": "form-group col-12",
                     "id": "",
                     "name": "telefono",
+                    "mailchimpField": "PHONE",
                     "attribs": {
                         "type": "tel",
                         "class": "form-control",
@@ -193,7 +196,7 @@
                         "type": "select",
                         "class": "form-control",
                         "id": "tipo_servicio",
-                        "value": "1|2|3|4",
+                        "value": "0|1|2|3|4",
                         "placeholder": "Adultos",
                         "required": 0
                     }
@@ -205,7 +208,7 @@
                     "attribs": {
                         "type": "select",
                         "class": "form-control",
-                        "value": "1|2|3|4",
+                        "value": "0|1|2|3|4",
                         "placeholder": "Menores",
                         "required": 0
                     }
@@ -241,7 +244,7 @@
             }
         },
         "assets": {
-            "slick": 0,
+            "slick": 1,
             "matchHeight": 0,
             "aos": 1,
             "animate": 1,
@@ -262,8 +265,8 @@
             "password": ""
         },
         "mailchimp": {
-            "use": 1,
-            "api": "311f94c2cd0133f3878889813b4e8ecd-us1"
+            "use": 0,
+            "api": ""
         }
     }
 }
