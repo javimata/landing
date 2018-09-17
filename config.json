@@ -50,11 +50,14 @@
             "class": "",
             "id": "descarga",
             "method": "",
+            "containerClass": "box-campos mt-3",
+            "containerId": "",
             "attribs": {},
             "mailchimpList": "",
+            "errorBox": "caja_error",
             "fields": {
                 "nombre": {
-                    "class": "",
+                    "class": "form-group",
                     "id": "",
                     "attribs": {
                         "type": "text",
@@ -62,11 +65,12 @@
                         "id": "",
                         "value": "",
                         "placeholder": "Nombre completo",
+                        "attribs": {},
                         "required": 1
                     }
                 },
                 "email": {
-                    "class": "",
+                    "class": "form-group",
                     "id": "",
                     "attribs": {
                         "type": "email",
@@ -74,7 +78,19 @@
                         "id": "",
                         "value": "",
                         "placeholder": "Email",
+                        "attribs": {},
                         "required": 1
+                    }
+                },
+                "submit": {
+                    "class": "form-group",
+                    "id": "",
+                    "attribs": {
+                        "type": "submit",
+                        "class": "btn btn-primary btn-full mb-3",
+                        "id": "",
+                        "value": "DESCARGAR AHORA",
+                        "attribs": {}
                     }
                 }
             }
@@ -84,11 +100,14 @@
             "class": "",
             "id": "descarga",
             "method": "",
+            "containerClass": "row",
+            "containerId": "",
             "attribs": {},
             "mailchimpList": "",
+            "errorBox": "caja_error",
             "fields": {
                 "nombre": {
-                    "class": "",
+                    "class": "form-group col-12",
                     "id": "",
                     "attribs": {
                         "type": "text",
@@ -100,7 +119,7 @@
                     }
                 },
                 "email": {
-                    "class": "",
+                    "class": "form-group col-12",
                     "id": "",
                     "attribs": {
                         "type": "email",
@@ -110,7 +129,83 @@
                         "placeholder": "Email",
                         "required": 1
                     }
-                }
+                },
+                "telefono": {
+                    "class": "form-group col-12",
+                    "id": "",
+                    "attribs": {
+                        "type": "tel",
+                        "class": "form-control",
+                        "id": "",
+                        "value": "",
+                        "placeholder": "Telefono",
+                        "required": 0
+                    }
+                },                
+                "entrada": {
+                    "class": "form-group col-6",
+                    "id": "",
+                    "attribs": {
+                        "type": "date",
+                        "class": "form-control",
+                        "id": "",
+                        "value": "",
+                        "label": "<i class=\"far fa-calendar-alt\"></i> Entrada",
+                        "required": 0,
+                        "attribs": {
+                            "min": "[NOW]"
+                        }
+                    }
+                },
+                "salida": {
+                    "class": "form-group col-6",
+                    "id": "",
+                    "attribs": {
+                        "type": "date",
+                        "class": "form-control",
+                        "id": "",
+                        "value": "",
+                        "label": "<i class=\"far fa-calendar-alt\"></i> Salida",
+                        "required": 0,
+                        "attribs": {
+                            "min": "[TOMORROW]"
+                        }
+                    }
+                },
+                "adultos": {
+                    "class": "form-group col-6",
+                    "id": "",
+                    "attribs": {
+                        "type": "select",
+                        "class": "form-control",
+                        "id": "tipo_servicio",
+                        "value": "[*]1|2|3|4",
+                        "placeholder": "Adultos",
+                        "required": 0
+                    }
+                },
+                "menores": {
+                    "class": "form-group col-6",
+                    "id": "",
+                    "attribs": {
+                        "type": "select",
+                        "class": "form-control",
+                        "value": "[*]1|2|3|4",
+                        "placeholder": "Menores",
+                        "required": 0
+                    }
+                },
+                "submit": {
+                    "class": "form-group col-12",
+                    "id": "",
+                    "attribs": {
+                        "type": "submit",
+                        "class": "btn btn-primary btn-full mb-3",
+                        "id": "",
+                        "value": "RESERVA AHORA",
+                        "attribs": {}
+                    }
+                }                
             }
         }        
     },

@@ -100,24 +100,37 @@ function createForm( $form = NULL ){
 
     if ( $form ) {
         // var_dump($form);
-        $action        = ($form->action != "") ? $form->action : "php/process.php";
-        $method        = ($form->method != "") ? $form->method : "POST";
-        $class         = ($form->class != "") ? $form->class : "";
-        $id            = ($form->id != "") ? $form->id : "";
-        $attribs       = ($form->attribs != "") ? $form->attribs : "";
-        $mailchimpList = ($form->mailchimpList != "") ? $form->mailchimpList : "";
+        $action         = ($form->action != "") ? $form->action : "php/process.php";
+        $method         = ($form->method != "") ? $form->method : "POST";
+        $class          = ($form->class != "") ? $form->class : "";
+        $id             = ($form->id != "") ? $form->id : "";
+        $containerClass = ($form->containerClass != "") ? $form->containerClass : "";
+        $containerId    = ($form->containerId != "") ? $form->containerId : "";
+        $attribs        = ($form->attribs != "") ? $form->attribs : "";
+        $mailchimpList  = ($form->mailchimpList != "") ? $form->mailchimpList : "";
 
-        $formHTML  = '';
+        $formHTML = '';
         $formHTML .= '<form action="'.$action.'" method="'.$method.'"';
         if ( $class != "" ) { $formHTML .= ' class="' . $class . '"'; }
         if ( $id != "" ) { $formHTML .= ' id="' . $id . '"'; }
         if ( $mailchimpList != "" ) { $formHTML .= ' data-mclist="' . $mailchimpList . '"'; }
 
+        if ( count( $form->attribs ) > 0 ){ $formHTML .= addAttribs($form->attribs); }
+
+        $formHTML .= '>';
+        $formHTML .= '<div'; // Container div
+        if ( $containerClass != "" ) { $formHTML .= ' class="' . $containerClass . '"'; }
+        if ( $containerId != "" ) { $formHTML .= ' id="' . $containerId . '"'; }
         $formHTML .= '>';
  
         // $fields = $form->fields;
-        createField($form->fields);
+        $formHTML .= createField($form->fields);
 
+        if ( $form->errorBox != "" ) { 
+            $formHTML .= '<div class="'.$form->errorBox.'"></div>';
+        }
+
+        $formHTML .= '</div>';
         $formHTML .= '</form>';
         echo $formHTML;
 
@@ -130,14 +143,131 @@ function createForm( $form = NULL ){
  */
 function createField( $fields ){
 
-    $fieldsHTML = "";
+    $fieldsHTML = '';
     foreach ($fields as $key => $field) {
         
-        $fieldsHTML .= '<div class="'.$field->class.'" id="'.$field->id.'" >';
+        $fieldsHTML .= '<div ';
+        if ($field->class != "") { $fieldsHTML .= ' class="'.$field->class.'"'; }
+        if ($field->id != "") { $fieldsHTML .= ' id="'.$field->id.'"'; }
+        $fieldsHTML .= '>';
+        $fieldsHTML .= createFieldbyType($field->attribs);
         $fieldsHTML .= '</div>';
         
     }
 
     return $fieldsHTML;
+
+}
+
+function createFieldbyType( $field ){
+
+    $fieldHTML = '';
+
+    switch ($field->type) {
+        case 'text':
+        case 'email':
+        case 'tel':
+        case 'date':
+        default;
+
+            $placeholder = ($field->required == 1) ? $field->placeholder . " *" : $field->placeholder;
+
+            if ( $field->label ) {
+                $fieldHTML .= '<label for="'.$field->id.'">'.$field->label.'</label>';
+            }
+
+            $fieldHTML .= '<input type="'.$field->type.'" ';
+            $fieldHTML .= 'name="'.$key.'" ';
+            $fieldHTML .= ($field->placeholder) ? 'placeholder="'.$placeholder.'" ': '' ;
+            $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
+            $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
+            $fieldHTML .= ($field->value) ? 'value="'. replaceValues($field->value).'" ': '' ;
+            $fieldHTML .= ($field->required == 1) ? 'required ' : '';
+            if ( count( $field->attribs ) > 0 ){ $fieldHTML .= addAttribs($field->attribs); }
+
+            $fieldHTML .= '/>';
+            break;
+        
+        case 'select':
+    
+            break;
+
+        case 'textarea':
+
+            if ( $field->label ) {
+                $fieldHTML .= '<label for="'.$field->id.'">'.$field->label.'</label>';
+            }
+
+            $placeholder = ($field->required == 1) ? $field->placeholder . " *" : $field->placeholder;
+            $fieldHTML .= '<textarea name="'.$key.'" ';
+            $fieldHTML .= ($field->placeholder) ? 'placeholder="'.$placeholder.'" ': '' ;
+            $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
+            $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
+            $fieldHTML .= ($field->required == 1) ? ' required' : '';
+            $fieldHTML .= '>';
+            $fieldHTML .= ($field->value) ? 'value="'.$field->value.'" ': '' ;
+            $fieldHTML .= '</textarea>';
+            
+            break;
+            
+        case 'radio':
+
+            break;
+            
+        case 'checkbox':
+            break;
+
+
+        case 'submit':
+        case 'button':
+
+            $fieldHTML .= '<button type="'.$field->type.'" ';
+            $fieldHTML .= 'name="'.$key.'" ';
+            $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
+            $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
+            if ( count( $field->attribs ) > 0 ){ $fieldHTML .= addAttribs($field->attribs); }            
+            $fieldHTML .= '>';
+            $fieldHTML .= ($field->value) ? $field->value : '' ;
+            $fieldHTML .= '</button>';
+            
+    }
+
+    return $fieldHTML;
+
+}
+
+
+function addAttribs($attribs){
+
+    if ($attribs) {
+
+        $attribsHTML = '';
+        foreach ($attribs as $key => $attrib) {
+
+            if ( $key == 'nokey' ){
+                
+                $attribsHTML .= ' '.replaceValues($attrib).' ';
+                
+            } else {
+                
+                $attribsHTML .= $key . '="'.replaceValues($attrib).'"';
+
+            }
+
+        }
+
+        return $attribsHTML;
+
+    }
+
+}
+
+function replaceValues($value) {
+
+    $arrayBase    = array('[NOW]','[TOMORROW]');
+    $arrayReplace = array(date('Y-m-d'),date('Y-m-d', strtotime("+ 1 day")));
+    $value = str_replace( $arrayBase, $arrayReplace, $value );
+
+    return $value;
 
 }

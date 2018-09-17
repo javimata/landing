@@ -182,6 +182,7 @@ $config = getConfig();
 					<p class="text-form">Deja tus datos y nuestros asesores te contactarán a la brevedad con la información para tus necesidades</p>
 				</header>
 				<div class="box-campos">
+					<?php createForm( $config->forms->reserva ); ?>
 					<form action="php/process.php" id="reservacion" novalidate="novalidate">
 					<div class="row">
 						<div class="form-group col-12">
@@ -426,20 +427,6 @@ $config = getConfig();
 								<h3>Descarga el folleto</h3>
 							</header>
 							<?php createForm( $config->forms->descarga ); ?>
-							<form action="php/process.php" id="descarga">
-								<div class="box-campos mt-3">
-									<div class="form-group">
-										<input type="text" name="nombre" class="form-control" placeholder="Nombre completo *" /> 
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" class="form-control" placeholder="Email *" />
-									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-primary btn-full mb-3">DESCARGAR AHORA</button>
-										<div class="caja_error">&nbsp;</div>
-									</div>
-								</div>							
-							</form>
 						</div>
 					</div>
 				</div>
