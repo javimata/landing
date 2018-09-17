@@ -44,29 +44,13 @@ function cleanString( $text="" ) {
 
 }
 
-/**
- * replaceString Replace a character in a string
- *
- * @param string $text Text to apply the replace rules
- * @return void
- */
-function replaceString( $text = "" ) {
-
-    $strS = array('[Y]');
-    $strL = array(date('Y'));
-
-    $text = str_replace($strS,$strL,$text);
-
-    return $text;
-
-}
 
 /**
  * get Configuration json
  *
  * @return void
  */
-function getConfig( $sub = null ) {
+function getConfig( $sub = NULL ) {
 
     $file = (!$sub) ? "config.json" : "../config.json" ;
     $jsonStr = file_get_contents( $file );
@@ -159,6 +143,9 @@ function createField( $fields ){
 
 }
 
+/**
+ * Crea los campos en base al tipo del mismo
+ */
 function createFieldbyType( $field ){
 
     $fieldHTML = '';
@@ -267,7 +254,10 @@ function createFieldbyType( $field ){
 
 }
 
-
+/**
+ * Agrega la lista de atributos
+ * opcion nokey agrega un atributo sin key
+ */
 function addAttribs($attribs){
 
     if ($attribs) {
@@ -293,10 +283,14 @@ function addAttribs($attribs){
 
 }
 
-function replaceValues($value) {
+/**
+ * replaceValues Reemplaza valores de un string
+ * @param string $value Texto a reemplazar
+ */
+function replaceValues( $value = NULL ) {
 
-    $arrayBase    = array('[NOW]','[TOMORROW]');
-    $arrayReplace = array(date('Y-m-d'),date('Y-m-d', strtotime("+ 1 day")));
+    $arrayBase    = array('[Y]','[NOW]','[TOMORROW]');
+    $arrayReplace = array(date('Y'), date('Y-m-d'),date('Y-m-d', strtotime("+ 1 day")));
     $value = str_replace( $arrayBase, $arrayReplace, $value );
 
     return $value;

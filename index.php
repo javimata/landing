@@ -395,7 +395,7 @@ $config = getConfig();
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<?php echo replaceString($config->info->copyright); ?> 
+						<?php echo replaceValues($config->info->copyright); ?> 
 					</div>
 				</div>
 			</div>
