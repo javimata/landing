@@ -111,7 +111,7 @@ function createForm( $form = NULL ){
         $formHTML .= createField($form->fields);
 
         if ( $form->errorBox != "" ) { 
-            $formHTML .= '<div class="'.$form->errorBox.'"></div>';
+            $formHTML .= '<div class="'.$form->errorBox.'">&nbsp;</div>';
         }
 
         $formHTML .= '</div>';
@@ -134,7 +134,7 @@ function createField( $fields ){
         if ($field->class != "") { $fieldsHTML .= ' class="'.$field->class.'"'; }
         if ($field->id != "") { $fieldsHTML .= ' id="'.$field->id.'"'; }
         $fieldsHTML .= '>';
-        $fieldsHTML .= createFieldbyType($field->attribs);
+        $fieldsHTML .= createFieldbyType($field);
         $fieldsHTML .= '</div>';
         
     }
@@ -146,9 +146,10 @@ function createField( $fields ){
 /**
  * Crea los campos en base al tipo del mismo
  */
-function createFieldbyType( $field ){
+function createFieldbyType( $fieldMain ){
 
     $fieldHTML = '';
+    $field = $fieldMain->attribs;
 
     switch ($field->type) {
         case 'text':
@@ -164,7 +165,7 @@ function createFieldbyType( $field ){
             }
 
             $fieldHTML .= '<input type="'.$field->type.'" ';
-            $fieldHTML .= 'name="'.$key.'" ';
+            $fieldHTML .= 'name="'.$fieldMain->name.'" ';
             $fieldHTML .= ($field->placeholder) ? 'placeholder="'.$placeholder.'" ': '' ;
             $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
             $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
@@ -182,7 +183,7 @@ function createFieldbyType( $field ){
             }
 
             $fieldHTML .= '<select type="'.$field->type.'" ';
-            $fieldHTML .= 'name="'.$key.'" ';
+            $fieldHTML .= 'name="'.$fieldMain->name.'" ';
             $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
             $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
             if ( count( $field->attribs ) > 0 ){ $fieldHTML .= addAttribs($field->attribs); }
@@ -217,7 +218,7 @@ function createFieldbyType( $field ){
             }
 
             $placeholder = ($field->required == 1) ? $field->placeholder . " *" : $field->placeholder;
-            $fieldHTML .= '<textarea name="'.$key.'" ';
+            $fieldHTML .= '<textarea name="'.$fieldMain->name.'" ';
             $fieldHTML .= ($field->placeholder) ? 'placeholder="'.$placeholder.'" ': '' ;
             $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
             $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
@@ -240,7 +241,7 @@ function createFieldbyType( $field ){
         case 'button':
 
             $fieldHTML .= '<button type="'.$field->type.'" ';
-            $fieldHTML .= 'name="'.$key.'" ';
+            $fieldHTML .= 'name="'.$fieldMain->name.'" ';
             $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
             $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
             if ( count( $field->attribs ) > 0 ){ $fieldHTML .= addAttribs($field->attribs); }            

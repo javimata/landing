@@ -109,60 +109,32 @@
 		/**
 		 * Formularios
 		 */
-		$("form#reservacion").submit(function(e){
+		$("form").on('submit',function(e){
 			e.preventDefault();
 			
 			var $form     = $(this),
 			    url       = $(this).attr("action"),
-			    id        = $(this).attr("id")
+			    id        = $(this).attr("id"),
 			    cajaError = $("#" + id + " .caja_error"),
 			    errores   = 0;
 
 			cajaError.empty().removeClass("alert alert-info");
-			$form.find('.resalta').removeClass('resalta');
 
-			var fnombre   = $form.find('input[name="nombre"]').val(),
-			    femail    = $form.find('input[name="email"]').val(),
-			    ftelefono = $form.find('input[name="telefono"]').val(),
-			    fentrada  = $form.find('select[name="entrada"]').val(),
-			    fsalida   = $form.find('select[name="salida"]').val(),
-			    fadultos  = $form.find('select[name="adultos"]').val(),
-			    fmenores  = $form.find('select[name="menores"]').val();
-
-			var emailReg 	= new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/);
-
-			if ( fnombre.length <=3 ) {
-				$form.find('input[name="nombre"]').addClass('resalta').focus();
-				cajaError.empty().prepend("<span class=\"fas fa-exclamation-triangle\"></span> Por favor indica tu nombre");
-				return false;
-				var errores=1;
-			};
-
-			if ( !emailReg.test(femail) ) {
-				$form.find('input[name="email"]').addClass('resalta').focus();
-				cajaError.empty().prepend("<span class=\"fas fa-exclamation-triangle\"></span> Por favor indica tu email");
-				return false;
-				var errores=1;
-			};	
-
+			var datosForm = $form.serialize();
 
 			if (errores!=1){
 
 				$("#" + id + " button.btn-primary").attr("disabled","disabled");
 
-				$.post( url, { 
-					nombre:fnombre,
-					email:femail,
-					telefono:ftelefono,
-					entrada:fentrada,
-					salida: fsalida,
-					adultos: fadultos,
-					menores: fmenores,
-					a:1
-					}, 
-					function( data ) {
+				$.ajax({ 
+					method: "POST",
+					url: url,
+					data: datosForm + "&a=1&form="+id,
+					dataType: "json",
+					success: function( data ) {
 						if (parseInt(data.respuesta)==1){
-							cajaError.empty().addClass("alert alert-info").append(data.texto_respuesta);
+							cajaError.empty().addClass("alert alert-info").append(data.texto_respuesta + "\n" + data.mailchimp_respuesta);
+							$("#" + id + " button.btn-primary").removeAttr("disabled");
 							$("#" + id)[0].reset();
 
 							if (typeof gtag == 'function') {
@@ -178,7 +150,8 @@
 							alert(data.texto_respuesta);
 							$("#" + id + " button.btn-primary").removeAttr("disabled");
 						};
-				}, "json");
+					}
+				});
 
 				
 			}else{
@@ -188,7 +161,7 @@
 
 		});
 
-
+		/*
 		$("form#descarga").submit(function (e) {
 			e.preventDefault();
 
@@ -258,7 +231,7 @@
 			};
 
 		});
-
+		*/
 
 
 

@@ -53,12 +53,16 @@
             "containerClass": "box-campos mt-3",
             "containerId": "",
             "attribs": {},
-            "mailchimpList": "",
+            "mailchimpList": "679cac3ca9",
+            "titleMail": "Solicitud de Folleto",
+            "successMail": "Gracias por solicitar nuestro folleto, en breve lo recibirá en el email indicado",
+            "errorMail": "",
             "errorBox": "caja_error",
             "fields": {
                 "nombre": {
                     "class": "form-group",
                     "id": "",
+                    "name": "nombre",
                     "attribs": {
                         "type": "text",
                         "class": "form-control",
@@ -72,6 +76,7 @@
                 "email": {
                     "class": "form-group",
                     "id": "",
+                    "name": "email",
                     "attribs": {
                         "type": "email",
                         "class": "form-control",
@@ -98,17 +103,21 @@
         "reserva": {
             "action": "",
             "class": "",
-            "id": "descarga",
+            "id": "reserva",
             "method": "",
             "containerClass": "row",
             "containerId": "",
             "attribs": {},
-            "mailchimpList": "",
-            "errorBox": "caja_error",
+            "mailchimpList": "a15073e8df",
+            "errorBox": "form-group col-12 caja_error",
+            "titleMail": "Solicitud de reservacion",
+            "successMail": "Gracias por solicitar su reservacion, en breve le daremos el seguimiento requerido",
+            "errorMail": "",
             "fields": {
                 "nombre": {
                     "class": "form-group col-12",
                     "id": "",
+                    "name": "nombre",
                     "attribs": {
                         "type": "text",
                         "class": "form-control",
@@ -121,6 +130,7 @@
                 "email": {
                     "class": "form-group col-12",
                     "id": "",
+                    "name": "email",
                     "attribs": {
                         "type": "email",
                         "class": "form-control",
@@ -133,6 +143,7 @@
                 "telefono": {
                     "class": "form-group col-12",
                     "id": "",
+                    "name": "telefono",
                     "attribs": {
                         "type": "tel",
                         "class": "form-control",
@@ -145,6 +156,7 @@
                 "entrada": {
                     "class": "form-group col-6",
                     "id": "",
+                    "name": "entrada",
                     "attribs": {
                         "type": "date",
                         "class": "form-control",
@@ -160,6 +172,7 @@
                 "salida": {
                     "class": "form-group col-6",
                     "id": "",
+                    "name": "salida",
                     "attribs": {
                         "type": "date",
                         "class": "form-control",
@@ -175,6 +188,7 @@
                 "adultos": {
                     "class": "form-group col-6",
                     "id": "",
+                    "name": "adultos",
                     "attribs": {
                         "type": "select",
                         "class": "form-control",
@@ -187,6 +201,7 @@
                 "menores": {
                     "class": "form-group col-6",
                     "id": "",
+                    "name": "menores",
                     "attribs": {
                         "type": "select",
                         "class": "form-control",
@@ -200,7 +215,7 @@
                     "id": "",
                     "attribs": {
                         "type": "submit",
-                        "class": "btn btn-primary btn-full mb-3",
+                        "class": "btn btn-primary btn-full",
                         "id": "",
                         "value": "RESERVA AHORA",
                         "attribs": {}
@@ -247,10 +262,8 @@
             "password": ""
         },
         "mailchimp": {
-            "use": 0,
-            "api": "",
-            "listID1": "",
-            "listID2": ""
+            "use": 1,
+            "api": "311f94c2cd0133f3878889813b4e8ecd-us1"
         }
     }
 }
