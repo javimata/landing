@@ -179,7 +179,7 @@
                         "type": "select",
                         "class": "form-control",
                         "id": "tipo_servicio",
-                        "value": "[*]1|2|3|4",
+                        "value": "1|2|3|4",
                         "placeholder": "Adultos",
                         "required": 0
                     }
@@ -190,7 +190,7 @@
                     "attribs": {
                         "type": "select",
                         "class": "form-control",
-                        "value": "[*]1|2|3|4",
+                        "value": "1|2|3|4",
                         "placeholder": "Menores",
                         "required": 0
                     }

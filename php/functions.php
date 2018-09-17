@@ -189,6 +189,37 @@ function createFieldbyType( $field ){
             break;
         
         case 'select':
+
+            if ( $field->label ) {
+                $fieldHTML .= '<label for="'.$field->id.'">'.$field->label.'</label>';
+            }
+
+            $fieldHTML .= '<select type="'.$field->type.'" ';
+            $fieldHTML .= 'name="'.$key.'" ';
+            $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
+            $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
+            if ( count( $field->attribs ) > 0 ){ $fieldHTML .= addAttribs($field->attribs); }
+            $fieldHTML .= ($field->required == 1) ? 'required ' : '';
+            $fieldHTML .= '>';
+
+            $fieldHTML .= ($field->placeholder) ? '<option value="">'.$field->placeholder.'</option>': '</option>- Selecciona -</option>' ;
+
+            $valores = explode("|",$field->value);
+
+            foreach($valores as $valor) {
+
+                $fieldHTML .= '<option value="';
+                $fieldHTML .= str_replace('[*]','',$valor) . '" ';
+                if (strpos($valor, '[*]') !== false) {
+                    $fieldHTML .= 'selected';
+                }
+                $fieldHTML .= '>';
+                $fieldHTML .= str_replace('[*]','',$valor);
+                $fieldHTML .= '</option>';
+
+            }
+
+            $fieldHTML .= '</select>';
     
             break;
 

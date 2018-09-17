@@ -183,49 +183,6 @@ $config = getConfig();
 				</header>
 				<div class="box-campos">
 					<?php createForm( $config->forms->reserva ); ?>
-					<form action="php/process.php" id="reservacion" novalidate="novalidate">
-					<div class="row">
-						<div class="form-group col-12">
-							<input type="text" name="nombre" id="nombre" placeholder="Nombre Completo *" class="form-control" required minlength="3" />
-						</div>
-						<div class="form-group col-12">
-							<input type="email" name="email" placeholder="Email *" class="form-control" required />
-						</div>
-						<div class="form-group col-12">
-							<input type="text" name="telefono" placeholder="Teléfono" class="form-control" />
-						</div>
-						<div class="form-group col-md-6">
-							<label><i class="far fa-calendar-alt"></i> Entrada</label>
-							<input type="date" name="entrada" min="<?php echo date('Y-m-d'); ?>" class="form-control" />
-						</div>
-						<div class="form-group col-md-6">
-							<label><i class="far fa-calendar-alt"></i> Salida</label>
-							<input type="date" name="salida" min="<?php echo date('Y-m-d', strtotime("+ 1 day")); ?>" class="form-control" />
-						</div>
-						<div class="form-group col-md-6">
-							<select name="adultos" id="tipo_servicio" class="form-control">
-								<option value="">Adultos</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-							</select>
-						</div>
-						<div class="form-group col-md-6">
-							<select name="menores" id="tipo_servicio" class="form-control">
-								<option value="">Menores</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-							</select>
-						</div>						
-						<div class="form-group col-12">
-							<button class="btn btn-primary btn-full">QUIERO MÁS INFORMACIÓN</button>
-							<div class="caja_error">&nbsp;</div>
-						</div>
-					</div>
-					</form>
 				</div>
 			</div>
 
