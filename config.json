@@ -108,6 +108,64 @@
                         "required": 1
                     }
                 },
+                "aviso": {
+                    "class": "form-group",
+                    "id": "",
+                    "name": "",
+                    "attribs": {
+                        "type": "checkbox",
+                        "class": "form-check-input",
+                        "id": "inlineCheckbox1",
+                        "value": "",
+                        "label": "Aviso de privacidad",
+                        "labelClass": "form-check-label",
+                        "attribs": {},
+                        "required": 1
+                    }
+                },
+                "texto": {
+                    "class": "titulo",
+                    "id": "",
+                    "name": "Texto",
+                    "attribs": {
+                        "type": "title",
+                        "tag": "", 
+                        "class": "texto",
+                        "id": "testRadio1",
+                        "value": "Agregar a Mailchimp",
+                        "attribs": {}
+                    }
+                },
+                "radio": {
+                    "class": "form-group",
+                    "id": "",
+                    "name": "testRadio",
+                    "attribs": {
+                        "type": "radio",
+                        "class": "form-check-input",
+                        "id": "testRadio1",
+                        "value": "",
+                        "label": "Si",
+                        "labelClass": "form-check-label",
+                        "attribs": {},
+                        "required": 1
+                    }
+                },
+                "radio2": {
+                    "class": "form-group",
+                    "id": "",
+                    "name": "testRadio",
+                    "attribs": {
+                        "type": "radio",
+                        "class": "form-check-input",
+                        "id": "testRadio2",
+                        "value": "",
+                        "label": "No",
+                        "labelClass": "form-check-label",
+                        "attribs": {},
+                        "required": 1
+                    }
+                },                
                 "submit": {
                     "class": "form-group",
                     "id": "",

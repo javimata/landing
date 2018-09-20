@@ -27,6 +27,7 @@ function RandomString($length=10,$uc=TRUE,$n=FALSE,$sc=FALSE) {
     return $rstr;
 
 }
+
 /**
  * cleanString function that clean a string
  *
@@ -78,6 +79,7 @@ function validateUrl( $url = NULL ){
 
 /**
  * Crea un menu desde la información del config.json
+ * El resultado es a partir del listado de items, no se crea el contendor NAV
  */
 function createMenu( $menu = NULL ) {
 
@@ -270,12 +272,35 @@ function createFieldbyType( $fieldMain ){
             break;
             
         case 'radio':
-
-            break;
-            
         case 'checkbox':
+
+            $fieldHTML .= '<div class="form-check">';
+            $fieldHTML .= '<input type="'.$field->type.'" ';
+            $fieldHTML .= 'name="'.$fieldMain->name.'" ';
+            $fieldHTML .= ($field->placeholder) ? 'placeholder="'.$placeholder.'" ': '' ;
+            $fieldHTML .= ($field->class) ? 'class="'.$field->class.'" ': '' ;
+            $fieldHTML .= ($field->id) ? 'id="'.$field->id.'" ': '' ;
+            $fieldHTML .= ($field->value) ? 'value="'. replaceValues($field->value).'" ': '' ;
+            $fieldHTML .= ($field->required == 1) ? 'required ' : '';
+            if ( count( $field->attribs ) > 0 ){ $fieldHTML .= addAttribs($field->attribs); }
+            $fieldHTML .= '/>';
+
+            if ( $field->label ) {
+                $fieldHTML .= '<label class="'.$field->labelClass.'" for="'.$field->id.'">'.$field->label.'</label>';
+            }
+            $fieldHTML .= '</div>';
+
             break;
 
+        case 'title':
+
+            $tag = ( $field->tag != "" ) ? $field->tag : "p";
+            $fieldHTML .= '<'.$tag;
+            $fieldHTML .= ( $field->class != "" ) ? ' class="'.$field->class.'" ' : "" ;
+            $fieldHTML .= '>';
+            $fieldHTML .= $field->value;
+            $fieldHTML .= '</' . $tag . '>';
+            break;
 
         case 'submit':
         case 'button':
