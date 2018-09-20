@@ -233,6 +233,21 @@
                         "required": 0
                     }
                 },
+                "aviso": {
+                    "class": "form-group",
+                    "id": "",
+                    "name": "",
+                    "attribs": {
+                        "type": "checkbox",
+                        "class": "form-check-input",
+                        "id": "inlineCheckbox1",
+                        "value": "",
+                        "label": "Aviso de privacidad",
+                        "labelClass": "form-check-label",
+                        "attribs": {},
+                        "required": 1
+                    }
+                },                
                 "submit": {
                     "class": "form-group col-12",
                     "id": "",
