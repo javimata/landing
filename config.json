@@ -234,7 +234,7 @@
                     }
                 },
                 "aviso": {
-                    "class": "form-group",
+                    "class": "form-group col-12",
                     "id": "",
                     "name": "",
                     "attribs": {
