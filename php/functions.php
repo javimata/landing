@@ -76,6 +76,46 @@ function validateUrl( $url = NULL ){
 
 }
 
+/**
+ * Crea un menu desde la información del config.json
+ */
+function createMenu( $menu = NULL ) {
+
+    if ( count($menu) > 0 ) {
+
+        $class = ( $menu->class != "" ) ? 'class="'.$menu->class.'" ' : "";
+        $id    = ( $menu->id != "" ) ? 'id="'.$menu->id.'" ' : "";
+        $type  = ( $menu->type != "list" ) ? $menu->type : "list";
+        $menuHTML = "";
+
+        $menuHTML .= ( $menu->type !== "list" ) ? "<div " : "<ul ";
+        $menuHTML .= $class . $id . ">";
+
+        foreach ($menu->items as $key => $item) {
+
+            if ( $type == "list" ) { 
+                $menuHTML .= "<li ";
+                if ( $item->class != "" ) { $menuHTML .= 'class="'.$item->class.'"'; }
+                $menuHTML .= ">";
+            }
+
+            $itemClass = ( $item->itemClass != "" ) ? 'class="'.$item->itemClass.'"' : "";
+            $target    = ( $item->target != "" ) ? 'target="'.$item->target.'"' : "";
+            $menuHTML .= '<a href="'.$item->url.'" '.$itemClass.' '.$target.'>'.$key.'</a>';
+
+            if ( $type == "list" ) {
+                $menuHTML .= "</li>";
+            }
+            
+        }
+
+        $menuHTML .= ( $type == "link" ) ? "</div> " : "</ul>";
+
+    }
+
+    return $menuHTML;
+
+}
 
 /**
  * crea un formulario pasando el objeto del mismo a la funcion

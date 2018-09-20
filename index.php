@@ -141,13 +141,7 @@ $config = getConfig();
 								<span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
 							</button>
 							<div class="collapse navbar-collapse" id="navbarMain">
-								<ul class="navbar-nav w-100 justify-content-between align-items-end">
-									<?php foreach($config->menu as $key => $menu): ?>
-									<li>
-									<a href="<?php echo $menu->url; ?>" class="nav-item nav-link"><?php echo $key; ?></a>
-									</li>
-									<?php endforeach; ?>
-								</ul>
+								<?php echo createMenu($config->menu); ?>
 							</div>
 						</nav>
 					</div>

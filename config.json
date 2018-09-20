@@ -28,20 +28,40 @@
         }
     },
     "menu": {
-        "Nosotros": {
-            "url": "#nosotros"
-        },
-        "Servicios": {
-            "url": "#servicios"
-        },
-        "Ubicación": {
-            "url": "#ubicacion"
-        },
-        "Amenidades": {
-            "url": "#unidades"
-        },
-        "Contacto": {
-            "url": "#contacto"
+        "class": "navbar-nav w-100 justify-content-between align-items-end",
+        "id": "menu-main",
+        "type": "list",
+        "items": {
+            "Nosotros": {
+                "url": "#nosotros",
+                "class": "nav-item",
+                "target": "",
+                "itemClass": "nav-link"
+            },
+            "Servicios": {
+                "url": "#servicios",
+                "class": "nav-item",
+                "target": "",
+                "itemClass": "nav-link"
+            },
+            "Ubicación": {
+                "url": "#ubicacion",
+                "class": "nav-item",
+                "target": "",
+                "itemClass": "nav-link"
+            },
+            "Amenidades": {
+                "url": "#unidades",
+                "class": "nav-item",
+                "target": "",
+                "itemClass": "nav-link"
+            },
+            "Contacto": {
+                "url": "#contacto",
+                "class": "nav-item",
+                "target": "",
+                "itemClass": "nav-link"
+            }
         }
     },
     "forms": {
